@@ -2,15 +2,15 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 08:07:58 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-19 15:50:16
+ * @Last Modified time: 2018-08-19 20:11:54
  */
 import React from 'react';
-import { 
-  StyleSheet, 
-  Text, 
-  Easing, 
+import {
+  StyleSheet,
+  Text,
+  Easing,
   Platform,
-  Animated 
+  Animated
 } from 'react-native';
 import {
   createBottomTabNavigator,
@@ -22,6 +22,7 @@ import {
 } from 'react-navigation'
 import Home from './Home'
 import { Sider } from './Sider';
+import TextTest from './text/TextTest';
 
 // const HomeNavigator = createBottomTabNavigator({
 //   Home: { screen: Home },
@@ -31,6 +32,7 @@ import { Sider } from './Sider';
 const MainNavigator = createStackNavigator(
   {
     Home: { screen: Home },
+    TextTest: { screen: TextTest },
   },
   {
     headerMode: 'float',

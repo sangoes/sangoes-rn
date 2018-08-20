@@ -1,8 +1,8 @@
 /*
  * @Author: jerrychir 
- * @Date: 2018-08-18 09:13:35 
+ * @Date: 2018-08-19 18:55:46 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-19 18:00:17
+ * @Last Modified time: 2018-08-19 21:18:53
  */
 export {
     wp,
@@ -15,10 +15,14 @@ export {
 export { default as Storage } from './utils/storage'
 
 import Icon from './components/icon'
-import Icon from './components/view'
+import View from './components/view'
+import Text from './components/text'
+import Touchable from './components/touchable'
 
 
 export {
     Icon,
     View,
+    Text,
+    Touchable,
 }

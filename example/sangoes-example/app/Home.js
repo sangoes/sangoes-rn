@@ -2,11 +2,13 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 15:12:54 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-19 16:49:53
+ * @Last Modified time: 2018-08-19 20:42:34
  */
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import {Icon} from 'sangoes-rn'
+import { StyleSheet, View } from 'react-native';
+import { Icon, Text } from '../src'
+
+
 
 export default class Home extends React.Component {
     static navigationOptions = ({ navigation }) => ({
@@ -28,6 +30,10 @@ export default class Home extends React.Component {
                 <Text onPress={() => {
 
                 }}>icon</Text>
+                {/* Text */}
+                <Text onPress={() => {
+                    this.props.navigation.navigate('TextTest')
+                }}>Text(文本)</Text>
             </View>
         );
     }
