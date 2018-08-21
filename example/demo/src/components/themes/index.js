@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 17:08:35 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-19 21:21:34
+ * @Last Modified time: 2018-08-21 16:13:41
  */
 
 export default {
@@ -14,6 +14,7 @@ export default {
     brand_error: '#f4333c',
     brand_important: '#ff5b05',  // 用于小红点
     brand_wait: '#108ee9',
+    brand_disabled: '#bbbbbb',
 
     // 边框色
     border_color_base: '#dddddd',
