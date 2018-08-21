@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-21 14:09:27 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-21 18:30:57
+ * @Last Modified time: 2018-08-21 22:42:38
  */
 import React, { Component } from "react";
 
@@ -16,6 +16,8 @@ import styleTypes from "../propTypes/styleTypes";
 import nodeTypes from "../propTypes/nodeTypes";
 import { hp } from "../../utils/dimension";
 import View from "../view/index";
+import TextStyle from "../propTypes/textTypes";
+import { ActivityIndicator } from "react-native";
 
 /**
  * Button
@@ -29,17 +31,25 @@ export default class Button extends Component {
       title,
       radius,
       disabled,
-      icon
+      icon,
+      large,
+      loading,
+      loadingProps
     } = this.props;
+    //
+    let textStyle = titleStyle;
 
     //borderRadius
     radius > 0 && (style.borderRadius = radius);
+    // text color
+    // titleStyle && (titleStyle.color = themes.color_text_base_inverse);
+    // console.log(titleStyle)
     //icon
     icon && [
       icon.type || (icon.type = "MaterialCommunityIcons"),
       icon.name || (icon.name = "adjust"),
       icon.color || (icon.color = "white"),
-      icon.size || (icon.size = hp("2.3"))
+      icon.size || (icon.size = hp("2.5"))
     ];
     return (
       <Touchable
@@ -51,7 +61,17 @@ export default class Button extends Component {
         ]}
         disabled={disabled}
       >
-        <View type="horizontal">
+        <View type="horizontal" style={styles.btnItem}>
+          {/* loading */}
+          {loading && (
+            <ActivityIndicator
+              animating
+              style={[styles.indicator]}
+              color={loadingProps.color}
+              size={loadingProps.size}
+              {...loadingProps}
+            />
+          )}
           {/* icon */}
           {icon && (
             <Icon
@@ -63,7 +83,7 @@ export default class Button extends Component {
             />
           )}
           {/* title */}
-          <Text style={titleStyle}>{title}</Text>
+          <Text style={[styles.textWhite, textStyle]}>{title}</Text>
         </View>
       </Touchable>
     );
@@ -82,13 +102,16 @@ Button.propTypes = {
     "warning",
     "disabled"
   ]),
-  icon: nodeTypes
+  icon: nodeTypes,
+  loading: PropTypes.bool,
+  loadingProps: PropTypes.object
 };
 Button.defaultProps = {
   type: "primary",
   title: "Button",
   radius: 0,
-  titleStyle: {
-    color: themes.color_text_base_inverse
+  loadingProps: {
+    color: "white",
+    size: "small"
   }
 };

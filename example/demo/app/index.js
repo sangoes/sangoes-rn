@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 08:07:58 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-21 14:21:54
+ * @Last Modified time: 2018-08-21 22:46:44
  */
 import React from "react";
 import { StyleSheet, Text, Easing, Platform, Animated } from "react-native";
@@ -18,6 +18,7 @@ import Home from "./Home";
 import { Sider } from "./Sider";
 import TextTest from "./text/TextTest";
 import ButtonTest from "./button/ButtonTest";
+import IconTest from "./icon/IconTest";
 
 // const HomeNavigator = createBottomTabNavigator({
 //   Home: { screen: Home },
@@ -27,6 +28,7 @@ import ButtonTest from "./button/ButtonTest";
 const MainNavigator = createStackNavigator(
   {
     Home: { screen: Home },
+    IconTest: { screen: IconTest },
     TextTest: { screen: TextTest },
     ButtonTest: { screen: ButtonTest }
   },

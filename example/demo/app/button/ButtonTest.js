@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-21 14:20:33 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-21 18:28:27
+ * @Last Modified time: 2018-08-21 22:38:34
  */
 import React from "react";
 import { View, Icon, hp, wp } from "../../src";
@@ -34,8 +34,15 @@ export default class ButtonTest extends React.Component {
           title="ICON BUTTON"
           style={{ marginTop: 10 }}
           icon={{
-              name:'format-list-bulleted',
-            }}
+            name: "format-list-bulleted"
+          }}
+        />
+        {/*large button  */}
+        <Button
+          type="primary"
+          title="ActivityIndicator BUTTON"
+          loading
+          style={{ marginTop: 10 }}
         />
       </View>
     );

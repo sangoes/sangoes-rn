@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 15:12:54 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-21 14:22:40
+ * @Last Modified time: 2018-08-21 22:46:55
  */
 import React from "react";
 import { StyleSheet, View } from "react-native";
@@ -25,14 +25,20 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text onPress={() => {}}>icon</Text>
+        <Text
+          onPress={() => {
+            this.props.navigation.navigate("IconTest");
+          }}
+        >
+          ICON(图标及按钮)
+        </Text>
         {/* Text */}
         <Text
           onPress={() => {
             this.props.navigation.navigate("TextTest");
           }}
         >
-          Text(文本)
+          TEXT(文本)
         </Text>
         {/* Button */}
         <Text
@@ -40,7 +46,7 @@ export default class Home extends React.Component {
             this.props.navigation.navigate("ButtonTest");
           }}
         >
-          Button(按钮)
+          BUTTON(按钮)
         </Text>
       </View>
     );

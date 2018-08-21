@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-20 10:09:27 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-21 18:17:30
+ * @Last Modified time: 2018-08-21 22:39:30
  */
 import { StyleSheet } from "react-native";
 import variables from "../themes";
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    padding: hp("1.2"),
+    padding: hp("1.5"),
     marginLeft: wp("2"),
     marginRight: wp("2")
   },
@@ -32,10 +32,18 @@ const styles = StyleSheet.create({
   disabled: {
     backgroundColor: variables.brand_disabled
   },
-  btnIcon: {
+  btnItem:{
     alignItems: "center",
+  },
+  btnIcon: {
     marginRight: wp("2")
-  }
+  },
+  textWhite:{
+    color: variables.color_text_base_inverse,
+  },
+  indicator: {
+    marginRight: wp("2")
+  },
 });
 
 export default styles;
