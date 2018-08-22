@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 09:14:57 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 12:16:22
+ * @Last Modified time: 2018-08-22 14:26:38
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -17,11 +17,20 @@ import Icon from "../icon";
  */
 export default class Image extends Component {
   render() {
-    const { type, style, source, iconName, iconSize, rounded } = this.props;
+    const {
+      type,
+      style,
+      source,
+      iconName,
+      iconSize,
+      rounded,
+      onPress,
+      onLongPress
+    } = this.props;
     //borderRadius
     const borderRadius = styles[type].width / 2;
     return (
-      <Touchable>
+      <Touchable onPress={onPress} onLongPress={onLongPress}>
         {source ? (
           <RNImage
             ref={c => (this._root = c)}
@@ -59,7 +68,9 @@ Image.propTypes = {
   type: PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
   iconName: PropTypes.string,
   iconSize: PropTypes.number,
-  rounded: PropTypes.bool
+  rounded: PropTypes.bool,
+  onPress: PropTypes.func,
+  onLongPress: PropTypes.func
 };
 Image.defaultProps = {
   type: "small",

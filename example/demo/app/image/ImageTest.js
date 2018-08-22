@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 09:17:48 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 12:15:55
+ * @Last Modified time: 2018-08-22 13:30:12
  */
 import React from "react";
 import { View, Text, Image } from "../../src";

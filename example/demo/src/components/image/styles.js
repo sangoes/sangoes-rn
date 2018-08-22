@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 09:20:21 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 12:14:48
+ * @Last Modified time: 2018-08-22 13:11:09
  */
 import { StyleSheet } from "react-native";
 import variables from "../themes";
@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   small: {
-    width: wp("8"),
-    height: wp("8"),
+    width: wp("7"),
+    height: wp("7"),
     borderRadius: 0
   },
   medium: {
