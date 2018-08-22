@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 12:33:04 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 14:46:17
+ * @Last Modified time: 2018-08-22 15:01:07
  */
 
 import React, { Component } from "react";
@@ -14,7 +14,7 @@ import nodeTypes from "../propTypes/nodeTypes";
 import Image from "../image";
 import Touchable from "../touch/touchable";
 import Icon from "../icon";
-import { hp } from 'sangoes-rn-tools';
+import { hp } from "sangoes-rn-tools";
 
 export default class Item extends Component {
   render() {
@@ -29,7 +29,10 @@ export default class Item extends Component {
       checkmark
     } = this.props;
     return (
-      <Touchable onPress={onPress} onLongPress={onLongPress}>
+      <Touchable
+        onPress={onPress}
+        onLongPress={onLongPress}
+      >
         <View
           type="horizontal"
           ref={c => (this._root = c)}
@@ -54,7 +57,7 @@ export default class Item extends Component {
               style={styles.rightIcon}
               type="MaterialCommunityIcons"
               name="chevron-right"
-              size={hp('3')}
+              size={hp("3")}
             />
           )}
         </View>

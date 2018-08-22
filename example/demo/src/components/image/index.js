@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 09:14:57 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 14:26:38
+ * @Last Modified time: 2018-08-22 15:00:21
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -30,7 +30,10 @@ export default class Image extends Component {
     //borderRadius
     const borderRadius = styles[type].width / 2;
     return (
-      <Touchable onPress={onPress} onLongPress={onLongPress}>
+      <Touchable
+        onPress={onPress}
+        onLongPress={onLongPress}
+      >
         {source ? (
           <RNImage
             ref={c => (this._root = c)}
