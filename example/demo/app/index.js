@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 08:07:58 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-21 22:46:44
+ * @Last Modified time: 2018-08-22 09:24:25
  */
 import React from "react";
 import { StyleSheet, Text, Easing, Platform, Animated } from "react-native";
@@ -19,6 +19,7 @@ import { Sider } from "./Sider";
 import TextTest from "./text/TextTest";
 import ButtonTest from "./button/ButtonTest";
 import IconTest from "./icon/IconTest";
+import ImageTest from "./image/ImageTest";
 
 // const HomeNavigator = createBottomTabNavigator({
 //   Home: { screen: Home },
@@ -30,7 +31,8 @@ const MainNavigator = createStackNavigator(
     Home: { screen: Home },
     IconTest: { screen: IconTest },
     TextTest: { screen: TextTest },
-    ButtonTest: { screen: ButtonTest }
+    ButtonTest: { screen: ButtonTest },
+    ImageTest: { screen: ImageTest }
   },
   {
     headerMode: "float"

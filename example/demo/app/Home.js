@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 15:12:54 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-21 22:46:55
+ * @Last Modified time: 2018-08-22 09:25:39
  */
 import React from "react";
 import { StyleSheet, View } from "react-native";
@@ -47,6 +47,14 @@ export default class Home extends React.Component {
           }}
         >
           BUTTON(按钮)
+        </Text>
+        {/* Image */}
+        <Text
+          onPress={() => {
+            this.props.navigation.navigate("ImageTest");
+          }}
+        >
+          IMAGE(图片)
         </Text>
       </View>
     );

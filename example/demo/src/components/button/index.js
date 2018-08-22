@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-21 14:09:27 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-21 22:42:38
+ * @Last Modified time: 2018-08-22 11:35:40
  */
 import React, { Component } from "react";
 
@@ -10,13 +10,11 @@ import styles from "./styles";
 import Text from "../text/index";
 import PropTypes from "prop-types";
 import { Touchable } from "../touch";
-import themes from "../themes";
 import Icon from "../icon";
 import styleTypes from "../propTypes/styleTypes";
 import nodeTypes from "../propTypes/nodeTypes";
-import { hp } from "../../utils/dimension";
+import { hp } from "sangoes-rn-tools";
 import View from "../view/index";
-import TextStyle from "../propTypes/textTypes";
 import { ActivityIndicator } from "react-native";
 
 /**

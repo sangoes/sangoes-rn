@@ -2,10 +2,10 @@
  * @Author: jerrychir 
  * @Date: 2018-08-21 14:20:33 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-21 22:38:34
+ * @Last Modified time: 2018-08-22 11:36:22
  */
 import React from "react";
-import { View, Icon, hp, wp } from "../../src";
+import { View} from "../../src";
 import Button from "../../src/components/button";
 
 export default class ButtonTest extends React.Component {

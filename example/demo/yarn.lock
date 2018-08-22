@@ -4621,6 +4621,12 @@ sane@^2.0.0:
   optionalDependencies:
     fsevents "^1.2.3"
 
+sangoes-rn-tools@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/sangoes-rn-tools/-/sangoes-rn-tools-0.0.1.tgz#a858ef6e74a2fc8e889bc573de498241085132cd"
+  dependencies:
+    lodash "^4.17.10"
+
 sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"

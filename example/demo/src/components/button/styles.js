@@ -2,11 +2,11 @@
  * @Author: jerrychir 
  * @Date: 2018-08-20 10:09:27 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-21 22:39:30
+ * @Last Modified time: 2018-08-22 11:35:11
  */
 import { StyleSheet } from "react-native";
 import variables from "../themes";
-import { hp, wp } from "../../utils/dimension";
+import { hp, wp } from "sangoes-rn-tools";
 
 const styles = StyleSheet.create({
   default: {
