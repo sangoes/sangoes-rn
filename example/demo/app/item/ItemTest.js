@@ -2,10 +2,11 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 12:51:19 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 14:41:07
+ * @Last Modified time: 2018-08-23 09:48:37
  */
 import React from "react";
 import { ScrollView, Item, Text } from "../../src";
+import { hp } from "sangoes-rn-tools";
 
 export default class ItemTest extends React.Component {
   render() {
@@ -37,6 +38,23 @@ export default class ItemTest extends React.Component {
           title="subtitle"
           checkmark
         />
+        {/* image item */}
+        <Text> ITEM Large IMAGE</Text>
+        <Item image style={{ height: hp("10") }} checkmark />
+        {/* ITEM RIGHT TITLE */}
+        <Text> ITEM RIGHT TITLE</Text>
+        <Item image rightTitle="right title" />
+        {/* ITEM RIGHT SUBTITLE */}
+        <Text> ITEM RIGHT SUBTITLE</Text>
+        <Item
+          image
+          rightTitle="right title"
+          rightSubTitle="10:35 PM"
+          checkmark
+        />
+        {/* ITEM SECTION*/}
+        <Text> ITEM RIGHT SUBTITLE</Text>
+        <Item type="section" />
       </ScrollView>
     );
   }

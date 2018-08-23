@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 12:33:04 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 15:01:07
+ * @Last Modified time: 2018-08-23 09:47:11
  */
 
 import React, { Component } from "react";
@@ -26,22 +26,22 @@ export default class Item extends Component {
       subTitle,
       onPress,
       onLongPress,
-      checkmark
+      checkmark,
+      rightTitle,
+      rightSubTitle
     } = this.props;
     return (
-      <Touchable
-        onPress={onPress}
-        onLongPress={onLongPress}
-      >
+      <Touchable onPress={onPress} onLongPress={onLongPress}>
         <View
-          type="horizontal"
           ref={c => (this._root = c)}
-          {...this.props}
-          style={[styles.default, style]}
+          style={[styles[type], style]}
         >
-          {/* {this.props.children} */}
-          {/* avatar */}
-          {image && <Image source={image.source} rounded={image.rounded} />}
+          {/* image */}
+          {image && (
+            <View style={styles.imageView}>
+              <Image source={image.source} rounded={image.rounded} />
+            </View>
+          )}
           {/* title view */}
           <View style={styles.titleView}>
             {/* title */}
@@ -50,16 +50,31 @@ export default class Item extends Component {
             {subTitle && <Text type="text">{subTitle}</Text>}
           </View>
           {/* right view */}
-          <View />
-          {/* checkmark */}
-          {checkmark && (
-            <Icon
-              style={styles.rightIcon}
-              type="MaterialCommunityIcons"
-              name="chevron-right"
-              size={hp("3")}
-            />
-          )}
+          <View style={styles.rightItem}>
+            <View style={styles.imageView}>
+              {/*  rightSubTitle */}
+              {rightSubTitle && (
+                <Text type="text" style={styles.rightTitle}>
+                  {rightSubTitle}
+                </Text>
+              )}
+              {/* rightTitle */}
+              {rightTitle && (
+                <Text type="secondary" style={styles.rightTitle}>
+                  {rightTitle}
+                </Text>
+              )}
+            </View>
+            {/* checkmark */}
+            {checkmark && (
+              <Icon
+                style={{ marginTop: hp("0.3") }}
+                type="MaterialCommunityIcons"
+                name="chevron-right"
+                size={hp("3")}
+              />
+            )}
+          </View>
         </View>
       </Touchable>
     );
@@ -67,14 +82,18 @@ export default class Item extends Component {
 }
 
 Item.propTypes = {
+  type: PropTypes.oneOf(["default", "section"]),
   icon: nodeTypes,
   image: nodeTypes,
   title: PropTypes.string,
   subTitle: PropTypes.string,
   onPress: PropTypes.func,
   onLongPress: PropTypes.func,
-  checkmark: nodeTypes
+  checkmark: nodeTypes,
+  rightTitle: PropTypes.string,
+  rightSubTitle: PropTypes.string
 };
 Item.defaultProps = {
-  title: "Item Title"
+  title: "Item Title",
+  type: "default"
 };

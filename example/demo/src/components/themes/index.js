@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 17:08:35 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 12:46:35
+ * @Last Modified time: 2018-08-23 18:29:09
  */
 
 export default {
@@ -37,6 +37,55 @@ export default {
   font_size_caption: 16,
   font_size_heading: 17,
 
+  // 间距
+  // ---
+  // 水平间距
+  h_spacing_sm: 5,
+  h_spacing_md: 8,
+  h_spacing_lg: 15,
+
+  // 垂直间距
+  v_spacing_xs: 3,
+  v_spacing_sm: 6,
+  v_spacing_md: 9,
+  v_spacing_lg: 15,
+  v_spacing_xl: 21,
+
+  //margin
+  margin_sm: 5,
+  margin_md: 10,
+
+  // zindex
+  toast_zindex: 1999,
+  action_sheet_zindex: 1000,
+  popup_zindex: 999,
+  modal_zindex: 999,
+
+  // 圆角
+  radius_xs: 2,
+  radius_sm: 3,
+  radius_md: 5,
+  radius_lg: 7,
+
+  // image
+
   // item
-  item_white: "#ffffff"
+  item_white: "#ffffff",
+  item_section: "#e9e9ef",
+  item_height: 44,
+  item_section_height: 22,
+
+  //blank
+  blank_color: "transparent",
+  blank_height: 12,
+  blank_width: 12,
+
+  //divider
+  divider_color: "#BCBBC1",
+  divider_color_dark: "rgba(0, 0, 0, 0.12)",
+
+  // toast
+  toast_color: "rgba(0, 0, 0, .8)",
+  toast_maxWidth: 300,
+  toast_margin_top: 66
 };

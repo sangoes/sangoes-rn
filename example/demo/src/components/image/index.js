@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 09:14:57 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 15:00:21
+ * @Last Modified time: 2018-08-22 22:18:55
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -16,6 +16,12 @@ import Icon from "../icon";
  * Image
  */
 export default class Image extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      onLoadFinshed: false
+    };
+  }
   render() {
     const {
       type,
@@ -27,13 +33,11 @@ export default class Image extends Component {
       onPress,
       onLongPress
     } = this.props;
+    const { onLoadFinshed } = this.state;
     //borderRadius
     const borderRadius = styles[type].width / 2;
     return (
-      <Touchable
-        onPress={onPress}
-        onLongPress={onLongPress}
-      >
+      <Touchable onPress={onPress} onLongPress={onLongPress}>
         {source ? (
           <RNImage
             ref={c => (this._root = c)}
@@ -43,6 +47,7 @@ export default class Image extends Component {
               rounded && { borderRadius: borderRadius },
               style
             ]}
+            onLoad={() => {}}
           >
             {this.props.children}
           </RNImage>

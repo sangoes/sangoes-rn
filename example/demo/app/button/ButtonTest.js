@@ -2,11 +2,10 @@
  * @Author: jerrychir 
  * @Date: 2018-08-21 14:20:33 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 11:36:22
+ * @Last Modified time: 2018-08-23 14:13:57
  */
 import React from "react";
-import { View} from "../../src";
-import Button from "../../src/components/button";
+import { View,Button} from "../../src";
 
 export default class ButtonTest extends React.Component {
   render() {

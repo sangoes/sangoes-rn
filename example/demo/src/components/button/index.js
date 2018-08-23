@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-21 14:09:27 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 11:35:40
+ * @Last Modified time: 2018-08-23 14:17:30
  */
 import React, { Component } from "react";
 
@@ -32,7 +32,9 @@ export default class Button extends Component {
       icon,
       large,
       loading,
-      loadingProps
+      loadingProps,
+      onPress,
+      onLongPress
     } = this.props;
     //
     let textStyle = titleStyle;
@@ -58,6 +60,8 @@ export default class Button extends Component {
           style
         ]}
         disabled={disabled}
+        onPress={onPress}
+        onLongPress={onLongPress}
       >
         <View type="horizontal" style={styles.btnItem}>
           {/* loading */}
@@ -102,7 +106,9 @@ Button.propTypes = {
   ]),
   icon: nodeTypes,
   loading: PropTypes.bool,
-  loadingProps: PropTypes.object
+  loadingProps: PropTypes.object,
+  onPress: PropTypes.func,
+  onLongPress: PropTypes.func
 };
 Button.defaultProps = {
   type: "primary",
