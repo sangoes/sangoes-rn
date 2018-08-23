@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 18:55:46 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-23 15:54:22
+ * @Last Modified time: 2018-08-23 20:03:47
  */
 import Icon from "./components/icon";
 import View from "./components/view";
@@ -22,6 +22,7 @@ import Divider from "./components/divider/index";
 import ActivityIndicator from "./components/activityIndicator/index";
 import Button from "./components/button/index";
 import Toast from "./components/toast/index";
+import Badge from "./components/badge/index";
 
 export {
   Icon,
@@ -39,5 +40,6 @@ export {
   SectionList,
   Divider,
   ActivityIndicator,
-  Toast
+  Toast,
+  Badge
 };

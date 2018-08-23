@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 17:08:35 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-23 18:29:09
+ * @Last Modified time: 2018-08-23 21:32:32
  */
 
 export default {
@@ -87,5 +87,14 @@ export default {
   // toast
   toast_color: "rgba(0, 0, 0, .8)",
   toast_maxWidth: 300,
-  toast_margin_top: 66
+  toast_margin_top: 66,
+
+  // badge
+  badge_red: "#f4333c",
+  badge_orange: "#ff5b05",
+  badge_dot_sm: 10,
+  badge_dot_radius: 5,
+  badge_radius_md: 10,
+  badge_dot_large: 20,
+  badge_padding: 3
 };
