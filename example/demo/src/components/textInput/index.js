@@ -2,31 +2,21 @@
  * @Author: jerrychir 
  * @Date: 2018-08-25 22:06:01 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-09 10:21:54
+ * @Last Modified time: 2018-09-14 17:01:18
  */
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import styles from "./styles";
-import View from "../view/index";
-import { TextInput as RNTextInput,TextInputProps } from "react-native";
-import variables from "../themes";
+import { TextInput as RNTextInput } from "react-native";
 
 /**
  * TextInput
  */
 export default class TextInput extends Component {
   render() {
-    const { type, style, placeholderTextColor } = this.props;
+    const { style } = this.props;
     return (
       <RNTextInput
-        style={[styles[type], style]}
+        style={style}
         underlineColorAndroid="transparent"
-        // multiline={false}
-        placeholderTextColor={
-          placeholderTextColor
-            ? placeholderTextColor
-            : variables.color_text_placeholder
-        }
         {...this.props}
       />
     );
@@ -34,9 +24,6 @@ export default class TextInput extends Component {
 }
 
 TextInput.propTypes = {
-  type: PropTypes.oneOf(["default"]),
   ...RNTextInput.propTypes
 };
-TextInput.defaultProps = {
-  type: "default"
-};
+TextInput.defaultProps = {};

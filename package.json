@@ -1,6 +1,6 @@
 {
   "name": "sangoes-rn",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "react-native corss platfrom rn ui ",
   "main": "src/index.js",
   "scripts": {

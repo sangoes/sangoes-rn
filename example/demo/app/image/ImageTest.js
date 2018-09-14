@@ -2,10 +2,10 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 09:17:48 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 14:50:12
+ * @Last Modified time: 2018-09-14 17:34:32
  */
 import React from "react";
-import { View, Text, Image, ScrollView } from "../../src";
+import { View, Text, Image, ScrollView, Icon } from "../../src";
 
 export default class ImageTest extends React.Component {
   render() {

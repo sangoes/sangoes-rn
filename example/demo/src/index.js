@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 18:55:46 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-25 21:46:23
+ * @Last Modified time: 2018-09-14 17:09:50
  */
 import Icon from "./components/icon";
 import View from "./components/view";
@@ -23,6 +23,8 @@ import ActivityIndicator from "./components/activityIndicator/index";
 import Button from "./components/button/index";
 import Toast from "./components/toast/index";
 import Badge from "./components/badge/index";
+import TextInput from "./components/textInput/index";
+import InputItem from "./components/inputItem/index";
 import { PageCarousel, CardCarousel } from "./components/carousel/index";
 
 export {
@@ -44,5 +46,7 @@ export {
   Toast,
   Badge,
   PageCarousel,
-  CardCarousel
+  CardCarousel,
+  TextInput,
+  InputItem
 };

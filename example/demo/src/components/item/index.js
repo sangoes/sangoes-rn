@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 12:33:04 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-08 23:09:31
+ * @Last Modified time: 2018-09-14 17:10:23
  */
 
 import React, { Component } from "react";
@@ -15,7 +15,6 @@ import Image from "../image";
 import Touchable from "../touch/touchable";
 import Icon from "../icon";
 import { hp } from "sangoes-rn-tools";
-import TextInput from "../textInput";
 
 export default class Item extends Component {
   render() {
@@ -48,9 +47,6 @@ export default class Item extends Component {
             {/* sub title */}
             {subTitle && <Text type="text">{subTitle}</Text>}
           </View>
-          {/* input */}
-          {/* //TODO placeholder */}
-          {input && <TextInput style={{ width: 100 }} placeholder="dsafdsaf" />}
           {/* right view */}
           <View style={styles.rightItem}>
             <View style={styles.imageView}>
