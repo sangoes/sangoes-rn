@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-09-14 19:40:03 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-14 19:48:39
+ * @Last Modified time: 2018-09-14 20:08:05
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -22,8 +22,8 @@ Alert.alert(
   { cancelable: false }
 )
  */
-export default class Alert extends Component {
-  // render(){
-  //     return()
-  // }
-}
+// Alert({
+//   show=()=>{
+    
+//   }
+// })

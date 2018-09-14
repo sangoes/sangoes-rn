@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 08:07:58 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-08 21:15:05
+ * @Last Modified time: 2018-09-14 19:54:13
  */
 import React from "react";
 import { StyleSheet, Text, Easing, Platform, Animated } from "react-native";
@@ -26,6 +26,7 @@ import ActivityIndicatorTest from "./ActivityIndicator/ActivityIndicatorTest";
 import ToastTest from "./toast/ToastTest";
 import BadgeTest from "./badge/BadgeTest";
 import TextInputTest from "./textInput/TextInputTest";
+import AlertTest from "./alert/AlertTest";
 
 // const HomeNavigator = createBottomTabNavigator({
 //   Home: { screen: Home },
@@ -44,7 +45,8 @@ const MainNavigator = createStackNavigator(
     ActivityIndicatorTest: { screen: ActivityIndicatorTest },
     ToastTest: { screen: ToastTest },
     BadgeTest: { screen: BadgeTest },
-    TextInputTest: { screen: TextInputTest }
+    TextInputTest: { screen: TextInputTest },
+    AlertTest: { screen: AlertTest }
   },
   {
     headerMode: "float"
