@@ -2,11 +2,20 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 15:12:54 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-14 19:53:38
+ * @Last Modified time: 2018-09-14 22:06:45
  */
 import React from "react";
 import { StyleSheet, RefreshControl } from "react-native";
-import { Icon, Text, ScrollView, SectionList, Item, Divider } from "../src";
+import {
+  Icon,
+  Text,
+  ScrollView,
+  SectionList,
+  Item,
+  Divider,
+  View,
+  Badge
+} from "../src";
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -18,14 +27,17 @@ export default class Home extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: "Sangoes",
     headerLeft: (
-      <Icon
-        type="MaterialCommunityIcons"
-        name="format-list-bulleted"
-        backgroundColor={0.5}
-        onPress={navigation.openDrawer}
-        color="black"
-        size={28}
-      />
+      <View>
+        <Icon
+          type="MaterialCommunityIcons"
+          name="format-list-bulleted"
+          backgroundColor={0.5}
+          onPress={navigation.openDrawer}
+          color="black"
+          size={28}
+        />
+        <Badge style={{ position: "absolute", right: 0 }} />
+      </View>
     )
   });
   render() {
@@ -44,7 +56,9 @@ export default class Home extends React.Component {
           { name: "提示(Toast)", class: "ToastTest" },
           { name: "微标数(Badge)", class: "BadgeTest" },
           { name: "输入框(TextInput)", class: "TextInputTest" },
-          { name: "弹框(Alert)", class: "AlertTest" }
+          { name: "弹框(Alert)", class: "AlertTest" },
+          { name: "选择器(Picker)", class: "PickerTest" },
+          { name: "开关(Switch)", class: "SwitchTest" }
         ]
       }
     ];

@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 12:51:19 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-14 19:20:42
+ * @Last Modified time: 2018-09-14 23:00:29
  */
 import React from "react";
 import { ScrollView, Item, Text, InputItem } from "../../src";
@@ -54,6 +54,15 @@ export default class ItemTest extends React.Component {
             rightTitle="right title"
             rightSubTitle="10:35 PM"
             checkmark
+          />
+          {/* ITEM RIGHT SUBTITLE */}
+          <Text> ITEM RIGHT SUBTITLE</Text>
+          <Item
+            image
+            switcher
+            onSwitchPress={value => {
+              console.log(value);
+            }}
           />
           {/* ITEM SECTION*/}
           <Text> ITEM RIGHT SUBTITLE</Text>

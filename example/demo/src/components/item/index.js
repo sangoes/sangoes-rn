@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 12:33:04 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-14 17:10:23
+ * @Last Modified time: 2018-09-14 22:56:44
  */
 
 import React, { Component } from "react";
@@ -15,6 +15,7 @@ import Image from "../image";
 import Touchable from "../touch/touchable";
 import Icon from "../icon";
 import { hp } from "sangoes-rn-tools";
+import Switch from "../switch";
 
 export default class Item extends Component {
   render() {
@@ -29,7 +30,8 @@ export default class Item extends Component {
       checkmark,
       rightTitle,
       rightSubTitle,
-      input
+      switcher,
+      onSwitchPress
     } = this.props;
     return (
       <Touchable onPress={onPress} onLongPress={onLongPress}>
@@ -63,6 +65,14 @@ export default class Item extends Component {
                 </Text>
               )}
             </View>
+            {/* switch */}
+            {switcher && (
+              <Switch
+                onSwitchChange={value => {
+                  onSwitchPress(value);
+                }}
+              />
+            )}
             {/* checkmark */}
             {checkmark && (
               <Icon
@@ -90,7 +100,9 @@ Item.propTypes = {
   onLongPress: PropTypes.func,
   checkmark: nodeTypes,
   rightTitle: PropTypes.string,
-  rightSubTitle: PropTypes.string
+  rightSubTitle: PropTypes.string,
+  switcher: PropTypes.bool,
+  onSwitchPress: PropTypes.func
 };
 Item.defaultProps = {
   title: "Item Title",

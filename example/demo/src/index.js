@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 18:55:46 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-14 19:48:02
+ * @Last Modified time: 2018-09-14 22:33:43
  */
 import { Alert } from "react-native";
 import Icon from "./components/icon";
@@ -27,6 +27,7 @@ import Badge from "./components/badge/index";
 import TextInput from "./components/textInput/index";
 import InputItem from "./components/inputItem/index";
 import { PageCarousel, CardCarousel } from "./components/carousel/index";
+import Switch from "./components/switch/index";
 
 export {
   Icon,
@@ -50,5 +51,6 @@ export {
   CardCarousel,
   TextInput,
   InputItem,
-  Alert
+  Alert,
+  Switch
 };
