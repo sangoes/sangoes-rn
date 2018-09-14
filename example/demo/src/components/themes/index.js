@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 17:08:35 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-25 18:51:36
+ * @Last Modified time: 2018-09-09 10:18:57
  */
 
 export default {
@@ -97,5 +97,8 @@ export default {
   badge_radius_md: 10,
   badge_radius_sm: 2,
   badge_dot_large: 20,
-  badge_padding: 3
+  badge_padding: 3,
+
+  //input
+
 };

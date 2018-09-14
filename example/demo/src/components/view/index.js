@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 17:59:20 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-21 17:48:00
+ * @Last Modified time: 2018-09-08 17:08:10
  */
 import React, { Component } from "react";
 import { View as RNView } from "react-native";

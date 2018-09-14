@@ -2,33 +2,25 @@
  * @Author: jerrychir 
  * @Date: 2018-08-25 21:33:41 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-25 21:45:11
+ * @Last Modified time: 2018-09-08 17:08:44
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styles from "./styles";
-import View from "../view/index";
-import Text from "../text/index";
-import styleTypes from "../propTypes/styleTypes";
-import variables from "../themes";
+import View from "../../view/index";
 
 /**
  * CardCarousel
  */
 export default class CardCarousel extends Component {
   render() {
-    
-    return (
-        <View>
-            
-        </View>
-    );
+    return <View>dsafdsafd</View>;
   }
 }
 
 CardCarousel.propTypes = {
-  type: PropTypes.oneOf(["dot"]),
+  type: PropTypes.oneOf(["dot"])
 };
 CardCarousel.defaultProps = {
-  type: "dot",
+  type: "dot"
 };

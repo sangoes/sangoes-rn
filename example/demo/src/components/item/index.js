@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 12:33:04 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-23 09:47:11
+ * @Last Modified time: 2018-09-08 23:09:31
  */
 
 import React, { Component } from "react";
@@ -15,6 +15,7 @@ import Image from "../image";
 import Touchable from "../touch/touchable";
 import Icon from "../icon";
 import { hp } from "sangoes-rn-tools";
+import TextInput from "../textInput";
 
 export default class Item extends Component {
   render() {
@@ -28,14 +29,12 @@ export default class Item extends Component {
       onLongPress,
       checkmark,
       rightTitle,
-      rightSubTitle
+      rightSubTitle,
+      input
     } = this.props;
     return (
       <Touchable onPress={onPress} onLongPress={onLongPress}>
-        <View
-          ref={c => (this._root = c)}
-          style={[styles[type], style]}
-        >
+        <View ref={c => (this._root = c)} style={[styles[type], style]}>
           {/* image */}
           {image && (
             <View style={styles.imageView}>
@@ -49,6 +48,9 @@ export default class Item extends Component {
             {/* sub title */}
             {subTitle && <Text type="text">{subTitle}</Text>}
           </View>
+          {/* input */}
+          {/* //TODO placeholder */}
+          {input && <TextInput style={{ width: 100 }} placeholder="dsafdsaf" />}
           {/* right view */}
           <View style={styles.rightItem}>
             <View style={styles.imageView}>
@@ -85,6 +87,7 @@ Item.propTypes = {
   type: PropTypes.oneOf(["default", "section"]),
   icon: nodeTypes,
   image: nodeTypes,
+  input: PropTypes.bool,
   title: PropTypes.string,
   subTitle: PropTypes.string,
   onPress: PropTypes.func,

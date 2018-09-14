@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-22 12:51:19 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-23 09:48:37
+ * @Last Modified time: 2018-09-08 22:45:16
  */
 import React from "react";
 import { ScrollView, Item, Text } from "../../src";
@@ -12,6 +12,7 @@ export default class ItemTest extends React.Component {
   render() {
     return (
       <ScrollView>
+        <Text> ITEM </Text>
         <Item />
         {/* image item */}
         <Text> ITEM IMAGE</Text>
@@ -55,6 +56,9 @@ export default class ItemTest extends React.Component {
         {/* ITEM SECTION*/}
         <Text> ITEM RIGHT SUBTITLE</Text>
         <Item type="section" />
+        {/* ITEM INPUT*/}
+        <Text> ITEM INPUT</Text>
+        <Item input />
       </ScrollView>
     );
   }

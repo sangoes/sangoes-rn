@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 15:12:54 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-23 20:05:42
+ * @Last Modified time: 2018-09-08 21:16:11
  */
 import React from "react";
 import { StyleSheet, RefreshControl } from "react-native";
@@ -42,7 +42,8 @@ export default class Home extends React.Component {
           { name: "分割线(DIVIDER))", class: "DividerTest" },
           { name: "指示器(ActivituIndicator)", class: "ActivityIndicatorTest" },
           { name: "提示(Toast)", class: "ToastTest" },
-          { name: "微标数(Badge)", class: "BadgeTest" }
+          { name: "微标数(Badge)", class: "BadgeTest" },
+          { name: "输入框(TextInput)", class: "TextInputTest" }
         ]
       }
     ];
