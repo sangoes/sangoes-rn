@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 18:55:46 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-15 08:58:52
+ * @Last Modified time: 2018-09-15 14:30:22
  */
 import { Alert, Slider } from "react-native";
 import Icon from "./components/icon";
@@ -28,6 +28,9 @@ import TextInput from "./components/textInput/index";
 import InputItem from "./components/inputItem/index";
 import { PageCarousel, CardCarousel } from "./components/carousel/index";
 import Switch from "./components/switch/index";
+import { Picker, PickerMenu } from "./components/picker/index";
+import Modal from "./components/modal/index";
+import TextButton from "./components/textButton/index";
 
 export {
   Icon,
@@ -53,5 +56,9 @@ export {
   InputItem,
   Alert,
   Switch,
-  Slider
+  Slider,
+  Picker,
+  PickerMenu,
+  Modal,
+  TextButton
 };

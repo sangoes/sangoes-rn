@@ -2,10 +2,10 @@
  * @Author: jerrychir 
  * @Date: 2018-08-21 14:20:33 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-23 14:13:57
+ * @Last Modified time: 2018-09-15 14:34:45
  */
 import React from "react";
-import { View,Button} from "../../src";
+import { View, Button, TextButton } from "../../src";
 
 export default class ButtonTest extends React.Component {
   render() {
@@ -43,6 +43,8 @@ export default class ButtonTest extends React.Component {
           loading
           style={{ marginTop: 10 }}
         />
+        {/*large button  */}
+        <TextButton title="Text Button" style={{ marginTop: 10 }} />
       </View>
     );
   }

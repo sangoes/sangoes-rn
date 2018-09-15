@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 15:12:54 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-15 08:52:20
+ * @Last Modified time: 2018-09-15 13:11:57
  */
 import React from "react";
 import { StyleSheet, RefreshControl } from "react-native";
@@ -59,7 +59,8 @@ export default class Home extends React.Component {
           { name: "弹框(Alert)", class: "AlertTest" },
           { name: "选择器(Picker)", class: "PickerTest" },
           { name: "开关(Switch)", class: "SwitchTest" },
-          { name: "滑块(Silder)", class: "SilderTest" }
+          { name: "滑块(Silder)", class: "SilderTest" },
+          { name: "模式(Modal)", class: "ModalTest" }
         ]
       }
     ];

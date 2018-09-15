@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-20 10:09:27 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-22 11:35:11
+ * @Last Modified time: 2018-09-15 14:27:08
  */
 import { StyleSheet } from "react-native";
 import variables from "../themes";
@@ -32,18 +32,21 @@ const styles = StyleSheet.create({
   disabled: {
     backgroundColor: variables.brand_disabled
   },
-  btnItem:{
-    alignItems: "center",
+  transparent: {
+    backgroundColor: variables.brand_disabled
+  },
+  btnItem: {
+    alignItems: "center"
   },
   btnIcon: {
     marginRight: wp("2")
   },
-  textWhite:{
-    color: variables.color_text_base_inverse,
+  textWhite: {
+    color: variables.color_text_base_inverse
   },
   indicator: {
     marginRight: wp("2")
-  },
+  }
 });
 
 export default styles;

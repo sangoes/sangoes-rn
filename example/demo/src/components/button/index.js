@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-08-21 14:09:27 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-08-23 14:17:30
+ * @Last Modified time: 2018-09-15 14:23:30
  */
 import React, { Component } from "react";
 
@@ -51,6 +51,12 @@ export default class Button extends Component {
       icon.color || (icon.color = "white"),
       icon.size || (icon.size = hp("2.5"))
     ];
+    //transparent
+    if (type === "transparent") {
+      console.log(type)
+      delete styles.default.marginLeft;
+      delete styles.default.marginRight;
+    }
     return (
       <Touchable
         style={[
@@ -84,6 +90,7 @@ export default class Button extends Component {
               size={icon.size}
             />
           )}
+
           {/* title */}
           <Text style={[styles.textWhite, textStyle]}>{title}</Text>
         </View>
@@ -102,7 +109,8 @@ Button.propTypes = {
     "primaryTap",
     "success",
     "warning",
-    "disabled"
+    "disabled",
+    "transparent"
   ]),
   icon: nodeTypes,
   loading: PropTypes.bool,
