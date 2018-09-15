@@ -2,13 +2,14 @@
  * @Author: jerrychir 
  * @Date: 2018-09-15 10:25:12 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-15 15:35:06
+ * @Last Modified time: 2018-09-15 15:56:24
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styles from "./styles";
 import View from "../../view/index";
 import MCPicker from "rmc-picker/lib/Picker";
+import MultiPicker from "rmc-picker/lib/MultiPicker";
 import Popup from "rmc-picker/lib/Popup";
 import PopupStyles from "rmc-picker/lib/PopupStyles";
 import Text from "../../text";
@@ -18,13 +19,14 @@ import _ from "lodash";
 
 /**
  * Picker
+ * TODO 完成数据填充
  */
 export default class Picker extends Component {
   constructor(props) {
     super(props);
     this.state = {
       visible: false,
-      value: "1"
+      value: null
     };
   }
   /**
@@ -65,30 +67,48 @@ export default class Picker extends Component {
       [{ wa: "1" }, { ha: "2" }, { ec: "3" }]
     ];
     //arry data
-    const itemData = new Array();
-    _.forEach(data2, array => {
-      const pickerData = new Array();
-      _.forEach(array, item => {
-        return 1;
-      });
-      console.log("dsafsda")
-    });
-    //content
+    // const itemData = new Array();
+    // _.forEach(data2, array => {
+    //   const pickerData = new Array();
+    //   _.forEach(array, item => {
+    //     return 1;
+    //   });
+    //   console.log("dsafsda")
+    // });
+    //content 
     const popupContent = (
       <View>
-        <MCPicker
+        <MultiPicker
+          style={{
+            flexDirection: 'row' ,
+            alignItems: 'center' ,
+            paddingTop: 10,
+            paddingBottom: 10,
+          }}
           selectedValue={this.state.value}
           onValueChange={this.onChange}
         >
-          <MCPicker.Item value="1">one</MCPicker.Item>
-          <MCPicker.Item value="2">two</MCPicker.Item>
-          <MCPicker.Item value="3">three</MCPicker.Item>
-          <MCPicker.Item value="4">four</MCPicker.Item>
-          <MCPicker.Item value="5">five</MCPicker.Item>
-          <MCPicker.Item value="6">six</MCPicker.Item>
-          <MCPicker.Item value="7">seven</MCPicker.Item>
-          <MCPicker.Item value="8">eight</MCPicker.Item>
-        </MCPicker>
+          <MCPicker style={{ flex: 1 }}>
+            <MCPicker.Item value="1">one</MCPicker.Item>
+            <MCPicker.Item value="2">two</MCPicker.Item>
+            <MCPicker.Item value="3">three</MCPicker.Item>
+            <MCPicker.Item value="4">four</MCPicker.Item>
+            <MCPicker.Item value="5">five</MCPicker.Item>
+            <MCPicker.Item value="6">six</MCPicker.Item>
+            <MCPicker.Item value="7">seven</MCPicker.Item>
+            <MCPicker.Item value="8">eight</MCPicker.Item>
+          </MCPicker>
+          <MCPicker style={{ flex: 1 }}>
+            <MCPicker.Item value="11">eleven</MCPicker.Item>
+            <MCPicker.Item value="12">twelve</MCPicker.Item>
+            <MCPicker.Item value="13">thirteen</MCPicker.Item>
+            <MCPicker.Item value="14">fourteen</MCPicker.Item>
+            <MCPicker.Item value="15">fifteen</MCPicker.Item>
+            <MCPicker.Item value="16">sixteen</MCPicker.Item>
+            <MCPicker.Item value="17">seventeen</MCPicker.Item>
+            <MCPicker.Item value="18">eighteen</MCPicker.Item>
+          </MCPicker>
+        </MultiPicker>
       </View>
     );
     return (

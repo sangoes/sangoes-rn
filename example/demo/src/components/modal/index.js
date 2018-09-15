@@ -2,7 +2,7 @@
  * @Author: jerrychir 
  * @Date: 2018-09-15 10:25:12 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-15 13:35:52
+ * @Last Modified time: 2018-09-15 16:52:11
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -12,7 +12,7 @@ import Text from "../text";
 import View from "../view/index";
 
 /**
- * DatePicker
+ * Modal 对话框
  */
 export default class Modal extends Component {
   constructor(props) {
