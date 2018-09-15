@@ -2,9 +2,9 @@
  * @Author: jerrychir 
  * @Date: 2018-08-19 18:55:46 
  * @Last Modified by: jerrychir
- * @Last Modified time: 2018-09-14 22:33:43
+ * @Last Modified time: 2018-09-15 08:58:52
  */
-import { Alert } from "react-native";
+import { Alert, Slider } from "react-native";
 import Icon from "./components/icon";
 import View from "./components/view";
 import Text from "./components/text";
@@ -52,5 +52,6 @@ export {
   TextInput,
   InputItem,
   Alert,
-  Switch
+  Switch,
+  Slider
 };
