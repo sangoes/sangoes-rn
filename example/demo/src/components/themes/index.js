@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-19 17:08:35 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-09 10:18:57
+ * @Last Modified time: 2018-09-17 14:22:03
  */
 
 export default {
@@ -36,6 +36,9 @@ export default {
   font_size_subhead: 15,
   font_size_caption: 16,
   font_size_heading: 17,
+
+  //overlay蒙层
+  overlay_color: "rgba(0, 0, 0, 0.3)",
 
   // 间距
   // ---
@@ -97,8 +100,7 @@ export default {
   badge_radius_md: 10,
   badge_radius_sm: 2,
   badge_dot_large: 20,
-  badge_padding: 3,
+  badge_padding: 3
 
   //input
-
 };

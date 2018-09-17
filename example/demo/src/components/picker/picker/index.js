@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-15 10:25:12 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-15 15:56:24
+ * @Last Modified time: 2018-09-17 13:39:08
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -60,33 +60,37 @@ export default class Picker extends Component {
       onOkPress,
       onCanclePress,
       content,
-      data
+      data,
+      selectedValue,
+      onValueChange
     } = this.props;
     const data2 = [
-      [{ one: "1" }, { two: "2" }, { three: "3" }],
+      { key: "one", value: "1", chidrens: [{ key: "one", value: "1" }] }
+    ];
+    const data3 = [
+      [
+        { key: "one", value: "1", chidrens: [{ key: "one", value: "1" }] },
+        { two: "2" },
+        { three: "3" }
+      ],
       [{ wa: "1" }, { ha: "2" }, { ec: "3" }]
     ];
     //arry data
-    // const itemData = new Array();
-    // _.forEach(data2, array => {
-    //   const pickerData = new Array();
-    //   _.forEach(array, item => {
-    //     return 1;
-    //   });
-    //   console.log("dsafsda")
-    // });
-    //content 
+    const itemData = new Array();
+    _.forEach(data2, array => {
+      // const pickerData = new Array();
+      // _.forEach(array, item => {
+      //   return 1;
+      // });
+      // console.log("dsafsda");
+    });
+    //content
     const popupContent = (
       <View>
         <MultiPicker
-          style={{
-            flexDirection: 'row' ,
-            alignItems: 'center' ,
-            paddingTop: 10,
-            paddingBottom: 10,
-          }}
-          selectedValue={this.state.value}
-          onValueChange={this.onChange}
+          style={styles.multiPicker}
+          selectedValue={selectedValue}
+          onValueChange={onValueChange}
         >
           <MCPicker style={{ flex: 1 }}>
             <MCPicker.Item value="1">one</MCPicker.Item>
@@ -139,7 +143,7 @@ export default class Picker extends Component {
             }}
           />
         }
-        content={popupContent}
+        content={content || popupContent}
       />
     );
   }
@@ -152,6 +156,8 @@ Picker.propTypes = {
   cancleText: PropTypes.string, //cacle 取消
   onCanclePress: PropTypes.func, //取消函数
   data: PropTypes.array, //数据数组 data不为空是content为空
+  selectedValue: PropTypes.arry, //value arry
+  onValueChange: PropTypes.func, //选择结果值
   content: nodeTypes //content不为空data为空
 };
 Picker.defaultProps = {

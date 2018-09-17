@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-15 09:14:43 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-15 14:50:20
+ * @Last Modified time: 2018-09-17 11:09:10
  */
 import { StyleSheet } from "react-native";
 import variables from "../../themes";
@@ -28,6 +28,12 @@ const styles = StyleSheet.create({
   },
   btnStyle: {
     color: variables.brand_wait
+  },
+  multiPicker: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingTop: 10,
+    paddingBottom: 10
   }
 });
 
