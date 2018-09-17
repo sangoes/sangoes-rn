@@ -1,2 +1,0 @@
-# sangoes-rn
-sangoes-rn
