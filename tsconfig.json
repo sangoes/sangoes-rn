@@ -5,18 +5,11 @@
     "jsx": "preserve",
     "noUnusedParameters": true,
     "noUnusedLocals": true,
-    "allowSyntheticDefaultImports":true,
+    "allowSyntheticDefaultImports": true,
     "target": "es6",
     "noImplicitAny": true,
-    "types": [
-      "react",
-      "react-native"
-    ]
+    "types": ["react", "react-native"]
   },
-  "exclude": [
-    "node_modules",
-    "lib",
-    "es"
-  ],
+  "exclude": ["node_modules", "lib", "es"],
   "compileOnSave": false
 }

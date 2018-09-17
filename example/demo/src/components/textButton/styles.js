@@ -1,7 +1,7 @@
 /*
- * @Author: jerrychir 
+ * @Author: 驷爺.J.C 
  * @Date: 2018-08-19 19:02:06 
- * @Last Modified by: jerrychir
+ * @Last Modified by: 驷爺.J.C
  * @Last Modified time: 2018-09-15 14:37:55
  */
 import { StyleSheet } from 'react-native'

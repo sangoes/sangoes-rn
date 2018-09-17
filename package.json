@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jerrychir/sangoes-rn.git"
+    "url": "git+https://github.com/驷爺.J.C/sangoes-rn.git"
   },
   "keywords": [
     "react-native",
@@ -18,12 +18,12 @@
     "ui",
     "sangoes"
   ],
-  "author": "jerrychir",
+  "author": "驷爺.J.C",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jerrychir/sangoes-rn/issues"
+    "url": "https://github.com/驷爺.J.C/sangoes-rn/issues"
   },
-  "homepage": "https://github.com/jerrychir/sangoes-rn#readme",
+  "homepage": "https://github.com/驷爺.J.C/sangoes-rn#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.6",

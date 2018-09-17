@@ -1,11 +1,10 @@
 /*
  * @Author: 驷爺.J.C 
- * @Date: 2018-08-25 21:34:44 
- * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-08 17:11:51
+ * @Date: 2018-09-17 08:59:49 
+ * @Last Modified by:   驷爺.J.C 
+ * @Last Modified time: 2018-09-17 08:59:49 
  */
 import { StyleSheet } from "react-native";
-
 
 const hairlineWidth = StyleSheet.hairlineWidth;
 
