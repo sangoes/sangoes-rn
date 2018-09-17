@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-21 14:09:27 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-15 14:23:30
+ * @Last Modified time: 2018-09-17 16:55:40
  */
 import React, { Component } from "react";
 
@@ -15,7 +15,7 @@ import styleTypes from "../propTypes/styleTypes";
 import nodeTypes from "../propTypes/nodeTypes";
 import { hp } from "sangoes-rn-tools";
 import View from "../view/index";
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator,TouchableHighlight } from "react-native";
 
 /**
  * Button
@@ -65,6 +65,7 @@ export default class Button extends Component {
           disabled && styles.disabled,
           style
         ]}
+        // underlayColor={underlayColor}
         disabled={disabled}
         onPress={onPress}
         onLongPress={onLongPress}

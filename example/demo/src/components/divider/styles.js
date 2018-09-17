@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-23 09:04:42 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-08-23 10:51:34
+ * @Last Modified time: 2018-09-17 17:57:08
  */
 import { StyleSheet } from "react-native";
 import variables from "../themes";

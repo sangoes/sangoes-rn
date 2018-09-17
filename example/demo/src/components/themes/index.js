@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-19 17:08:35 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 14:22:03
+ * @Last Modified time: 2018-09-17 16:18:00
  */
 
 export default {
@@ -40,6 +40,10 @@ export default {
   //overlay蒙层
   overlay_color: "rgba(0, 0, 0, 0.3)",
 
+  //modal
+  modal_width: 286,
+  modal_alert_color: "rgba(255, 255, 255,1)",
+
   // 间距
   // ---
   // 水平间距
@@ -57,6 +61,8 @@ export default {
   //margin
   margin_sm: 5,
   margin_md: 10,
+  margin_ld: 15,
+  margin_xd: 20,
 
   // zindex
   toast_zindex: 1999,
@@ -69,6 +75,7 @@ export default {
   radius_sm: 3,
   radius_md: 5,
   radius_lg: 7,
+  radius_xlg: 10,
 
   // image
 

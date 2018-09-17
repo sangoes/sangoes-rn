@@ -2,16 +2,24 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-15 10:25:12 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 14:52:57
+ * @Last Modified time: 2018-09-17 18:20:52
  * Modal 对话框
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styles from "./styles";
-import { Modal as RNModal, TouchableOpacity } from "react-native";
-
+import Popup from "../popup";
+import Text from "../text";
+import View from "../view";
+import Divider from "../divider";
+import Button from "../button/index";
+import { _, uuid } from "sangoes-rn-tools";
+import variables from "../themes";
 /**
  * Modal 对话框
+ *
+ *
+ *
  */
 export default class Modal extends Component {
   constructor(props) {
@@ -20,6 +28,7 @@ export default class Modal extends Component {
       visible: false
     };
   }
+
   /**
    * show 展示
    */
@@ -36,40 +45,136 @@ export default class Modal extends Component {
       visible: false
     });
   }
-  render() {
-    const { type, animationType } = this.props;
-    //判断是否透明
-    let transparent = true;
-    type === "default" ? (transparent = false) : (transparent = true);
+  // 渲染alert
+  _renderAlert() {
+    const { title, subTitle, cancleTitle,buttons } = this.props;
+    const btns = [
+      {
+        text: "Ask me later",
+        onPress: () => console.log("Ask me later pressed")
+      },
+      {
+        text: "Cancel",
+        onPress: () => console.log("Cancel Pressed"),
+        style: "cancel"
+      }
+      // { text: "OK", onPress: () => console.log("OK Pressed") }
+    ];
+
+    //alert
+    const btnData = [];
+    switch (buttons.length) {
+      case 0:
+        btnData.push(
+          <Button
+            key={uuid.v1()}
+            titleStyle={styles.buttonTitle}
+            style={[styles.button]}
+            title={cancleTitle || "Cancle"}
+            onPress={() => this.hide()}
+          />
+        );
+        break;
+      case 2:
+        const btnTwoArry = [];
+        let index = 0;
+        _.forEach(btns, item => {
+          btnTwoArry.push(
+            <View key={uuid.v1()} type="horizontal">
+              <Button
+                titleStyle={styles.buttonTitle}
+                style={[styles.button]}
+                title={item.text}
+                onPress={item.onPress}
+              />
+              {/* TODO FIXME index 需要优化 */}
+              {index == 0 && <Divider type="vertical" />}
+            </View>
+          );
+          index++;
+        });
+        btnData.push(
+          <View key={uuid.v1()} style={styles.buttonsStyle}>
+            {btnTwoArry}
+          </View>
+        );
+        break;
+      case 3:
+        const btnArry = [];
+        _.forEach(btns, item => {
+          btnArry.push(
+            <View key={uuid.v1()}>
+              <Button
+                titleStyle={styles.buttonTitle}
+                style={[styles.button]}
+                title={item.text}
+                onPress={item.onPress}
+              />
+              <Divider />
+            </View>
+          );
+        });
+        btnData.push(<View key={uuid.v1()}>{btnArry}</View>);
+        break;
+      default:
+        btnData.push(
+          <Button
+            key={uuid.v1()}
+            titleStyle={styles.buttonTitle}
+            style={[styles.button]}
+            title={cancleTitle || "Cancle"}
+            onPress={() => this.hide()}
+          />
+        );
+        break;
+    }
     return (
-      <RNModal
-        animationType={animationType}
-        transparent={transparent}
+      <View style={styles.alertView}>
+        <View style={styles.alertBg}>
+          {/* title */}
+          <Text type="heading" style={styles.title}>
+            {title}
+          </Text>
+          {/* subTitle */}
+          <Text style={styles.subTitle}>{subTitle}</Text>
+          {/* divider */}
+          <Divider />
+          {btnData}
+        </View>
+      </View>
+    );
+  }
+  render() {
+    const { type, animationType, onCanclePress } = this.props;
+
+    return (
+      <Popup
+        animationType="fade"
+        type="overlay"
         visible={this.state.visible}
-        onRequestClose={this.hide}
-        onShow={() => {}}
+        onCanclePress={() => {
+          this.hide();
+          onCanclePress && onCanclePress();
+        }}
       >
-        {/* overlay */}
-        <TouchableOpacity
-          style={[{ flex: 1 }, type === "overlay" && styles.overlay]}
-          activeOpacity={1}
-          onPress={() => {
-            this.hide();
-          }}
-        >
-          {/* children */}
-          {this.props.children}
-        </TouchableOpacity>
-      </RNModal>
+        {/* alert */}
+        {this._renderAlert()}
+      </Popup>
     );
   }
 }
 
 Modal.propTypes = {
-  type: PropTypes.oneOf(["default", "transparent", "overlay"]),
-  animationType: PropTypes.oneOf(["none", "slide", "fade"])
+  type: PropTypes.oneOf(["modal", "alert", "actionSheet"]),
+  onCanclePress: PropTypes.func,
+  title: PropTypes.string, //标题
+  subTitle: PropTypes.string, //副标题
+  cancleTitle: PropTypes.string,
+  buttons: PropTypes.array //
 };
 Modal.defaultProps = {
   animationType: "none",
-  type: "default"
+  type: "modal",
+  title: "Alert Title",
+  subTitle: "My Alert Msg"
 };

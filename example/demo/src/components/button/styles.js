@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-20 10:09:27 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-15 14:27:08
+ * @Last Modified time: 2018-09-17 16:26:51
  */
 import { StyleSheet } from "react-native";
 import variables from "../themes";
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     backgroundColor: variables.brand_disabled
   },
   transparent: {
-    backgroundColor: variables.brand_disabled
+    backgroundColor: "transparent"
   },
   btnItem: {
     alignItems: "center"

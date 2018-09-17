@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-19 18:55:46 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-15 14:30:22
+ * @Last Modified time: 2018-09-17 15:01:26
  */
 import { Alert, Slider } from "react-native";
 import Icon from "./components/icon";
@@ -31,6 +31,8 @@ import Switch from "./components/switch/index";
 import { Picker, PickerMenu } from "./components/picker/index";
 import Modal from "./components/modal/index";
 import TextButton from "./components/textButton/index";
+import Popup from "./components/popup/index";
+import OverLay from "./components/overLay/index";
 
 export {
   Icon,
@@ -60,5 +62,7 @@ export {
   Picker,
   PickerMenu,
   Modal,
-  TextButton
+  TextButton,
+  Popup,
+  OverLay
 };
