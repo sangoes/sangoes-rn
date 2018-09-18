@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-21 14:09:27 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 16:55:40
+ * @Last Modified time: 2018-09-18 12:26:45
  */
 import React, { Component } from "react";
 
@@ -15,12 +15,29 @@ import styleTypes from "../propTypes/styleTypes";
 import nodeTypes from "../propTypes/nodeTypes";
 import { hp } from "sangoes-rn-tools";
 import View from "../view/index";
-import { ActivityIndicator,TouchableHighlight } from "react-native";
+import {
+  ActivityIndicator,
+  TouchableHighlight,
+  StyleSheet
+} from "react-native";
 
 /**
  * Button
  */
 export default class Button extends Component {
+  hexToRgba(hex, opacity) {
+    return (
+      "rgba(" +
+      parseInt("0x" + hex.slice(1, 3)) +
+      "," +
+      parseInt("0x" + hex.slice(3, 5)) +
+      "," +
+      parseInt("0x" + hex.slice(5, 7)) +
+      "," +
+      opacity +
+      ")"
+    );
+  }
   render() {
     const {
       style,
@@ -34,7 +51,8 @@ export default class Button extends Component {
       loading,
       loadingProps,
       onPress,
-      onLongPress
+      onLongPress,
+      highlight
     } = this.props;
     //
     let textStyle = titleStyle;
@@ -44,6 +62,12 @@ export default class Button extends Component {
     // text color
     // titleStyle && (titleStyle.color = themes.color_text_base_inverse);
     // console.log(titleStyle)
+    //underlayColor
+    const underlayColor =
+      highlight ||
+      (styles[`${type}Highlight`] &&
+        styles[`${type}Highlight`].backgroundColor) ||
+      this.hexToRgba(styles[type].backgroundColor, 0.8);
     //icon
     icon && [
       icon.type || (icon.type = "MaterialCommunityIcons"),
@@ -53,19 +77,19 @@ export default class Button extends Component {
     ];
     //transparent
     if (type === "transparent") {
-      console.log(type)
       delete styles.default.marginLeft;
       delete styles.default.marginRight;
     }
     return (
-      <Touchable
+      <TouchableHighlight
         style={[
           styles.default,
           styles[type],
           disabled && styles.disabled,
           style
         ]}
-        // underlayColor={underlayColor}
+        underlayColor={underlayColor}
+        activeOpacity={1}
         disabled={disabled}
         onPress={onPress}
         onLongPress={onLongPress}
@@ -95,7 +119,7 @@ export default class Button extends Component {
           {/* title */}
           <Text style={[styles.textWhite, textStyle]}>{title}</Text>
         </View>
-      </Touchable>
+      </TouchableHighlight>
     );
   }
 }
@@ -103,11 +127,11 @@ export default class Button extends Component {
 Button.propTypes = {
   title: PropTypes.string,
   titleStyle: styleTypes,
+  highlight: PropTypes.string,
   radius: PropTypes.number,
   disabled: PropTypes.bool,
   type: PropTypes.oneOf([
     "primary",
-    "primaryTap",
     "success",
     "warning",
     "disabled",

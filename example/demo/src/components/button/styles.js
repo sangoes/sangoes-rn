@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-20 10:09:27 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 16:26:51
+ * @Last Modified time: 2018-09-18 12:25:55
  */
 import { StyleSheet } from "react-native";
 import variables from "../themes";
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   primary: {
     backgroundColor: variables.brand_primary
   },
-  primaryTap: {
+  primaryHighlight: {
     backgroundColor: variables.brand_primary_tap
   },
   success: {

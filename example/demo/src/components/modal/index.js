@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-15 10:25:12 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-18 11:04:01
+ * @Last Modified time: 2018-09-18 11:24:32
  * Modal 对话框
  */
 import React, { Component } from "react";
@@ -64,21 +64,21 @@ export default class Modal extends Component {
         );
         break;
       case 1:
-        const btnArry = [];
-        _.forEach(buttons, item => {
-          btnArry.push(
-            <View key={uuid.v1()}>
-              <Button
-                titleStyle={styles.buttonTitle}
-                style={[styles.button, item.style]}
-                title={item.text}
-                onPress={item.onPress}
-              />
-              <Divider />
-            </View>
-          );
-        });
-        btnData.push(<View key={uuid.v1()}>{btnArry}</View>);
+        // const btnArry = [];
+        // _.forEach(buttons, item => {
+        //   btnArry.push(
+        //     <View key={uuid.v1()}>
+        //       <Button
+        //         titleStyle={styles.buttonTitle}
+        //         style={[styles.button, item.style]}
+        //         title={item.text}
+        //         onPress={item.onPress}
+        //       />
+        //       <Divider />
+        //     </View>
+        //   );
+        // });
+        // btnData.push(<View key={uuid.v1()}>{btnArry}</View>);
         break;
       case 2:
         const btnTwoArry = [];

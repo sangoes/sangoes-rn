@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-21 14:20:33 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-15 14:34:45
+ * @Last Modified time: 2018-09-18 12:03:34
  */
 import React from "react";
 import { View, Button, TextButton } from "../../src";
@@ -13,20 +13,40 @@ export default class ButtonTest extends React.Component {
       //
       <View>
         {/*primary  */}
-        <Button type="primary" title="primary" style={{ marginTop: 10 }} />
-        {/*primaryTap  */}
         <Button
+          type="primary"
+          title="primary"
+          style={{ marginTop: 10 }}
+          onPress={() => {}}
+        />
+        {/*primaryTap  */}
+        {/* <Button
           type="primaryTap"
           title="primaryTap radius"
           radius={5}
           style={{ marginTop: 10 }}
-        />
+        /> */}
         {/*success  */}
-        <Button type="success" title="success" style={{ marginTop: 10 }} />
+        <Button
+          type="success"
+          title="success"
+          style={{ marginTop: 10 }}
+          onPress={() => {}}
+        />
         {/*warning  */}
-        <Button type="warning" title="warning" style={{ marginTop: 10 }} />
+        <Button
+          type="warning"
+          title="warning"
+          style={{ marginTop: 10 }}
+          onPress={() => {}}
+        />
         {/*disabled  */}
-        <Button title="disabled" disabled style={{ marginTop: 10 }} />
+        <Button
+          title="disabled"
+          disabled
+          style={{ marginTop: 10 }}
+          onPress={() => {}}
+        />
         {/*icon  */}
         <Button
           type="primary"
@@ -35,6 +55,7 @@ export default class ButtonTest extends React.Component {
           icon={{
             name: "format-list-bulleted"
           }}
+          onPress={() => {}}
         />
         {/*large button  */}
         <Button
@@ -42,6 +63,7 @@ export default class ButtonTest extends React.Component {
           title="ActivityIndicator BUTTON"
           loading
           style={{ marginTop: 10 }}
+          onPress={() => {}}
         />
         {/*large button  */}
         <TextButton title="Text Button" style={{ marginTop: 10 }} />

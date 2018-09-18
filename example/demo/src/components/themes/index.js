@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-19 17:08:35 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 16:18:00
+ * @Last Modified time: 2018-09-18 12:24:10
  */
 
 export default {
@@ -10,6 +10,7 @@ export default {
   brand_primary: "#108ee9",
   brand_primary_tap: "#1284d6",
   brand_success: "#6abf47",
+  brand_success_tap: "#95E873",
   brand_warning: "#f4333c",
   brand_error: "#f4333c",
   brand_important: "#ff5b05", // 用于小红点
