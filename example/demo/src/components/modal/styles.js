@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-15 09:14:43 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 17:48:01
+ * @Last Modified time: 2018-09-17 20:03:45
  */
 import { StyleSheet } from "react-native";
 import variables from "../themes";
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     fontWeight: "bold",
     margin: variables.margin_sm,
-    marginTop: variables.margin_ld
+    marginTop: variables.margin_xd
   },
   subTitle: {
     alignSelf: "center",
@@ -37,15 +37,24 @@ const styles = StyleSheet.create({
     marginBottom: variables.margin_xd
   },
   button: {
-    backgroundColor: variables.modal_alert_color
+    backgroundColor: variables.modal_alert_color,
+    height: 49,
+  },
+  twoButton: {
+    backgroundColor: variables.modal_alert_color,
+    height: 49,
+    width: 134,
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5
   },
   buttonTitle: {
     color: "#007AFF",
-    fontSize: 20
+    fontSize: variables.font_size_caption
   },
-  buttonsStyle:{
-    flexDirection: 'row',
-    alignItems: 'center',
+  buttonsStyle: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around"
   }
 });
 

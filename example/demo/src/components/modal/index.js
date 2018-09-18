@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-15 10:25:12 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 18:20:52
+ * @Last Modified time: 2018-09-18 11:04:01
  * Modal 对话框
  */
 import React, { Component } from "react";
@@ -47,19 +47,7 @@ export default class Modal extends Component {
   }
   // 渲染alert
   _renderAlert() {
-    const { title, subTitle, cancleTitle,buttons } = this.props;
-    const btns = [
-      {
-        text: "Ask me later",
-        onPress: () => console.log("Ask me later pressed")
-      },
-      {
-        text: "Cancel",
-        onPress: () => console.log("Cancel Pressed"),
-        style: "cancel"
-      }
-      // { text: "OK", onPress: () => console.log("OK Pressed") }
-    ];
+    const { title, subTitle, cancleTitle, buttons } = this.props;
 
     //alert
     const btnData = [];
@@ -75,15 +63,33 @@ export default class Modal extends Component {
           />
         );
         break;
+      case 1:
+        const btnArry = [];
+        _.forEach(buttons, item => {
+          btnArry.push(
+            <View key={uuid.v1()}>
+              <Button
+                titleStyle={styles.buttonTitle}
+                style={[styles.button, item.style]}
+                title={item.text}
+                onPress={item.onPress}
+              />
+              <Divider />
+            </View>
+          );
+        });
+        btnData.push(<View key={uuid.v1()}>{btnArry}</View>);
+        break;
       case 2:
         const btnTwoArry = [];
         let index = 0;
-        _.forEach(btns, item => {
+        _.forEach(buttons, item => {
           btnTwoArry.push(
             <View key={uuid.v1()} type="horizontal">
               <Button
                 titleStyle={styles.buttonTitle}
-                style={[styles.button]}
+                // FIXME 需要修改
+                style={[styles.twoButton, item.style]}
                 title={item.text}
                 onPress={item.onPress}
               />
@@ -101,12 +107,12 @@ export default class Modal extends Component {
         break;
       case 3:
         const btnArry = [];
-        _.forEach(btns, item => {
+        _.forEach(buttons, item => {
           btnArry.push(
             <View key={uuid.v1()}>
               <Button
                 titleStyle={styles.buttonTitle}
-                style={[styles.button]}
+                style={[styles.button, item.style]}
                 title={item.text}
                 onPress={item.onPress}
               />
@@ -117,15 +123,6 @@ export default class Modal extends Component {
         btnData.push(<View key={uuid.v1()}>{btnArry}</View>);
         break;
       default:
-        btnData.push(
-          <Button
-            key={uuid.v1()}
-            titleStyle={styles.buttonTitle}
-            style={[styles.button]}
-            title={cancleTitle || "Cancle"}
-            onPress={() => this.hide()}
-          />
-        );
         break;
     }
     return (
@@ -146,7 +143,6 @@ export default class Modal extends Component {
   }
   render() {
     const { type, animationType, onCanclePress } = this.props;
-
     return (
       <Popup
         animationType="fade"
@@ -158,7 +154,7 @@ export default class Modal extends Component {
         }}
       >
         {/* alert */}
-        {this._renderAlert()}
+        {type === "alert" && this._renderAlert()}
       </Popup>
     );
   }
@@ -176,5 +172,6 @@ Modal.defaultProps = {
   animationType: "none",
   type: "modal",
   title: "Alert Title",
-  subTitle: "My Alert Msg"
+  subTitle: "My Alert Msg",
+  buttons: []
 };
