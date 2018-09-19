@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-15 13:06:04 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 20:04:54
+ * @Last Modified time: 2018-09-18 13:32:48
  */
 import React from "react";
 import {
@@ -46,7 +46,13 @@ export default class ModalTest extends React.Component {
             this.ThreeBaseModal.show();
           }}
         />
-
+        <Blank />
+        <Button
+          title="ActionSheet"
+          onPress={() => {
+            this.ActionSheetModal.show();
+          }}
+        />
         {/* 只有一个按钮 */}
         <Modal
           type="alert"
@@ -95,6 +101,17 @@ export default class ModalTest extends React.Component {
               onPress: () => console.log("取消")
             }
           ]}
+        />
+        {/* actionSheet */}
+        <Modal
+          type="actionSheet"
+          ref={o => (this.ActionSheetModal = o)}
+          title="我是弹窗XX"
+          subTitle="我副文本XXXXX"
+          cancleTitle="取消"
+          onCanclePress={() => {
+            console.log("dsafdsafs");
+          }}
         />
       </ScrollView>
     );

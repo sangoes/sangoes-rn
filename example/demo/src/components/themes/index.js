@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-19 17:08:35 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-18 12:24:10
+ * @Last Modified time: 2018-09-19 09:05:27
  */
 
 export default {
@@ -19,6 +19,18 @@ export default {
 
   // 边框色
   border_color_base: "#dddddd",
+
+  //actionsheet
+  actionsheet_item_height: 50,
+  actionsheet_item_font_size: 18,
+
+  // button
+  button_height: 47,
+  button_font_size: 18,
+
+  button_height_sm: 23,
+  button_font_size_sm: 12,
+
 
   // 文字色
   color_text_base: "#000000", // 基本
@@ -42,15 +54,17 @@ export default {
   overlay_color: "rgba(0, 0, 0, 0.3)",
 
   //modal
-  modal_width: 286,
+  modal_width: 287,
   modal_alert_color: "rgba(255, 255, 255,1)",
 
   // 间距
   // ---
   // 水平间距
+  h_spacing_xs: 3,
   h_spacing_sm: 5,
   h_spacing_md: 8,
   h_spacing_lg: 15,
+  h_spacing_xl: 20,
 
   // 垂直间距
   v_spacing_xs: 3,

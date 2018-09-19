@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-20 10:09:27 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-18 12:25:55
+ * @Last Modified time: 2018-09-18 23:06:43
  */
 import { StyleSheet } from "react-native";
 import variables from "../themes";
@@ -13,9 +13,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    padding: hp("1.5"),
-    marginLeft: wp("2"),
-    marginRight: wp("2")
+    height:48
   },
   primary: {
     backgroundColor: variables.brand_primary

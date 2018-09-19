@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-15 10:25:12 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-18 11:24:32
+ * @Last Modified time: 2018-09-18 22:50:06
  * Modal 对话框
  */
 import React, { Component } from "react";
@@ -13,8 +13,10 @@ import Text from "../text";
 import View from "../view";
 import Divider from "../divider";
 import Button from "../button/index";
-import { _, uuid } from "sangoes-rn-tools";
+import { _, uuid, screenWidth,wp } from "sangoes-rn-tools";
 import variables from "../themes";
+import { Animated } from "react-native";
+import { BlurView, VibrancyView } from "react-native-blur";
 /**
  * Modal 对话框
  *
@@ -25,10 +27,12 @@ export default class Modal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: false
+      visible: false,
+      heightAnim: new Animated.Value(0),
+      viewRef: null
     };
   }
-
+  componentDidMount() {}
   /**
    * show 展示
    */
@@ -36,13 +40,18 @@ export default class Modal extends Component {
     this.setState({
       visible: true
     });
+    Animated.timing(this.state.heightAnim, {
+      toValue: 200,
+      duration: 150
+    }).start();
   }
   /**
    * hide 隐藏
    */
   hide() {
     this.setState({
-      visible: false
+      visible: false,
+      heightAnim: new Animated.Value(0)
     });
   }
   // 渲染alert
@@ -136,16 +145,56 @@ export default class Modal extends Component {
           <Text style={styles.subTitle}>{subTitle}</Text>
           {/* divider */}
           <Divider />
-          {btnData}
         </View>
+        <View>{btnData}</View>
       </View>
     );
   }
+  // 渲染ActionSheet
+  _renderActionSheet() {
+    return (
+      <Animated.View
+        style={{
+          position: "absolute",
+          backgroundColor: "white",
+          width: screenWidth,
+          minHeight: this.state.heightAnim,
+          bottom: 0
+          // opacity: 0.6
+        }}
+      >
+        {/* <BlurView
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0
+          }}
+          // viewRef={this.state.viewRef}
+          blurType="light"
+          blurAmount={30}
+        /> */}
+        <Button
+          style={{
+            position: "absolute",
+            // marginLeft: wp("0"),
+            // marginRight: wp("0"),
+            bottom: 0,
+            width: screenWidth
+            // backgroundColor: "white"
+          }}
+          title="取消"
+          titleStyle={{ color: "black" }}
+        />
+      </Animated.View>
+    );
+  }
   render() {
-    const { type, animationType, onCanclePress } = this.props;
+    const { type, onCanclePress, animationType } = this.props;
     return (
       <Popup
-        animationType="fade"
+        animationType={animationType}
         type="overlay"
         visible={this.state.visible}
         onCanclePress={() => {
@@ -155,6 +204,8 @@ export default class Modal extends Component {
       >
         {/* alert */}
         {type === "alert" && this._renderAlert()}
+        {/* actionSheet */}
+        {type === "actionSheet" && this._renderActionSheet()}
       </Popup>
     );
   }
@@ -166,6 +217,7 @@ Modal.propTypes = {
   title: PropTypes.string, //标题
   subTitle: PropTypes.string, //副标题
   cancleTitle: PropTypes.string,
+  animationType: PropTypes.oneOf(["none", "slide", "fade"]),
   buttons: PropTypes.array //
 };
 Modal.defaultProps = {
@@ -173,5 +225,6 @@ Modal.defaultProps = {
   type: "modal",
   title: "Alert Title",
   subTitle: "My Alert Msg",
-  buttons: []
+  buttons: [],
+  animationType: "fade"
 };

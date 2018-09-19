@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-15 09:14:43 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 20:03:45
+ * @Last Modified time: 2018-09-18 12:55:43
  */
 import { StyleSheet } from "react-native";
 import variables from "../themes";
@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
   },
   alertBg: {
     backgroundColor: variables.modal_alert_color,
-    borderRadius: variables.radius_xlg,
+    borderTopRightRadius: variables.radius_xlg,
+    borderTopLeftRadius: variables.radius_xlg,
     width: variables.modal_width,
     shadowColor: variables.overlay_color,
     shadowOffset: { h: 20, w: 20 },
@@ -39,13 +40,16 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: variables.modal_alert_color,
     height: 49,
+    width: 287,
+    borderBottomLeftRadius: variables.radius_xlg,
+    borderBottomRightRadius: variables.radius_xlg
   },
   twoButton: {
     backgroundColor: variables.modal_alert_color,
     height: 49,
-    width: 134,
-    borderBottomLeftRadius: 5,
-    borderBottomRightRadius: 5
+    width: 143,
+    // borderBottomLeftRadius: variables.radius_xlg,
+    // borderBottomRightRadius: variables.radius_xlg
   },
   buttonTitle: {
     color: "#007AFF",
@@ -54,7 +58,7 @@ const styles = StyleSheet.create({
   buttonsStyle: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around"
+    // justifyContent: "space-around"
   }
 });
 
