@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-19 15:12:54 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 15:02:54
+ * @Last Modified time: 2018-09-19 22:34:41
  */
 import React from "react";
 import { StyleSheet, RefreshControl } from "react-native";
@@ -61,7 +61,8 @@ export default class Home extends React.Component {
           { name: "开关(Switch)", class: "SwitchTest" },
           { name: "滑块(Silder)", class: "SilderTest" },
           { name: "模式(Modal)", class: "ModalTest" },
-          { name: "弹窗(Popup)", class: "PopupTest" }
+          { name: "弹窗(Popup)", class: "PopupTest" },
+          { name: "动作模板(ActionSheetTest)", class: "ActionSheetTest" }
         ]
       }
     ];

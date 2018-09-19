@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-15 10:25:12 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-18 22:50:06
+ * @Last Modified time: 2018-09-19 21:25:42
  * Modal 对话框
  */
 import React, { Component } from "react";
@@ -13,10 +13,17 @@ import Text from "../text";
 import View from "../view";
 import Divider from "../divider";
 import Button from "../button/index";
-import { _, uuid, screenWidth,wp } from "sangoes-rn-tools";
-import variables from "../themes";
+import { _, uuid, screenWidth, wp } from "sangoes-rn-tools";
 import { Animated } from "react-native";
-import { BlurView, VibrancyView } from "react-native-blur";
+import Cell from "../cell";
+import {
+  Platform,
+  TouchableNativeFeedback,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  TouchableHighlight
+} from "react-native";
+import Blank from "../blank";
 /**
  * Modal 对话框
  *
@@ -28,7 +35,7 @@ export default class Modal extends Component {
     super(props);
     this.state = {
       visible: false,
-      heightAnim: new Animated.Value(0),
+      heightAnim: new Animated.Value(-100),
       viewRef: null
     };
   }
@@ -41,7 +48,7 @@ export default class Modal extends Component {
       visible: true
     });
     Animated.timing(this.state.heightAnim, {
-      toValue: 200,
+      toValue: 0,
       duration: 150
     }).start();
   }
@@ -51,7 +58,7 @@ export default class Modal extends Component {
   hide() {
     this.setState({
       visible: false,
-      heightAnim: new Animated.Value(0)
+      heightAnim: new Animated.Value(-100)
     });
   }
   // 渲染alert
@@ -155,38 +162,42 @@ export default class Modal extends Component {
     return (
       <Animated.View
         style={{
+          // flex:this.state.heightAnim,
           position: "absolute",
-          backgroundColor: "white",
           width: screenWidth,
-          minHeight: this.state.heightAnim,
-          bottom: 0
-          // opacity: 0.6
+          // minHeight: this.state.heightAnim,
+          bottom: this.state.heightAnim
         }}
       >
-        {/* <BlurView
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0
-          }}
-          // viewRef={this.state.viewRef}
-          blurType="light"
-          blurAmount={30}
-        /> */}
-        <Button
-          style={{
-            position: "absolute",
-            // marginLeft: wp("0"),
-            // marginRight: wp("0"),
-            bottom: 0,
-            width: screenWidth
-            // backgroundColor: "white"
-          }}
-          title="取消"
-          titleStyle={{ color: "black" }}
-        />
+        {/* cancle */}
+        <TouchableHighlight onPress={()=>{}}>
+          <Cell style={{ heghit: 49, alignItems: "center" }}>
+            <Text>显示</Text>
+          </Cell>
+        </TouchableHighlight>
+        <Divider/>
+        {/* cancle */}
+        <TouchableHighlight onPress={()=>{}}>
+          <Cell style={{ heghit: 49, alignItems: "center" }}>
+            <Text>显示</Text>
+          </Cell>
+        </TouchableHighlight>
+        <Divider/>
+        {/* cancle */}
+        <TouchableHighlight onPress={()=>{}}>
+          <Cell style={{ heghit: 49, alignItems: "center" }}>
+            <Text>确定</Text>
+          </Cell>
+        </TouchableHighlight>
+        <View style={{height:5,backgroundColor: "white", opacity: 0.8}}/>
+        {/* cancle */}
+        <TouchableHighlight onPress={()=>{}}>
+          <Cell style={{ heghit: 49, alignItems: "center" }}>
+            <Text>取消</Text>
+          </Cell>
+        </TouchableHighlight>
+        
+        
       </Animated.View>
     );
   }
@@ -221,7 +232,6 @@ Modal.propTypes = {
   buttons: PropTypes.array //
 };
 Modal.defaultProps = {
-  animationType: "none",
   type: "modal",
   title: "Alert Title",
   subTitle: "My Alert Msg",

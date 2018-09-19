@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-19 08:07:58 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 15:02:13
+ * @Last Modified time: 2018-09-19 22:33:51
  */
 import React from "react";
 import { StyleSheet, Text, Easing, Platform, Animated } from "react-native";
@@ -32,6 +32,7 @@ import SwitchTest from "./switch/SwitchTest";
 import SilderTest from "./slider/SilderTest";
 import ModalTest from "./modal/ModalTest";
 import PopupTest from "./popup/PopupTest";
+import ActionSheetTest from "./actionSheet/ActionSheetTest";
 
 // const HomeNavigator = createBottomTabNavigator({
 //   Home: { screen: Home },
@@ -56,7 +57,8 @@ const MainNavigator = createStackNavigator(
     SwitchTest: { screen: SwitchTest },
     SilderTest: { screen: SilderTest },
     ModalTest: { screen: ModalTest },
-    PopupTest: { screen: PopupTest }
+    PopupTest: { screen: PopupTest },
+    ActionSheetTest: { screen: ActionSheetTest }
   },
   {
     headerMode: "float"

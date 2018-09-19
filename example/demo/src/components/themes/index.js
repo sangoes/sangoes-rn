@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-19 17:08:35 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-19 09:05:27
+ * @Last Modified time: 2018-09-19 18:05:44
  */
 
 export default {
@@ -30,7 +30,6 @@ export default {
 
   button_height_sm: 23,
   button_font_size_sm: 12,
-
 
   // 文字色
   color_text_base: "#000000", // 基本
@@ -99,6 +98,10 @@ export default {
   item_section: "#e9e9ef",
   item_height: 44,
   item_section_height: 22,
+
+  //Cell
+  cell_white: "#ffffff",
+  cell_height: 44,
 
   //blank
   blank_color: "transparent",

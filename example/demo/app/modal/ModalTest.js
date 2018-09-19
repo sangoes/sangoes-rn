@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-15 13:06:04 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-18 13:32:48
+ * @Last Modified time: 2018-09-19 22:18:38
  */
 import React from "react";
 import {
@@ -12,7 +12,8 @@ import {
   Slider,
   Button,
   Alert,
-  Modal
+  Modal,
+  ActionSheet
 } from "../../src";
 
 export default class ModalTest extends React.Component {
@@ -51,6 +52,20 @@ export default class ModalTest extends React.Component {
           title="ActionSheet"
           onPress={() => {
             this.ActionSheetModal.show();
+          }}
+        />
+        <Blank />
+        <Button
+          title="mActionSheet"
+          onPress={() => {
+            this.mSheetModal.show();
+          }}
+        />
+        <Blank />
+        <Button
+          title="More ActionSheet"
+          onPress={() => {
+            this.moreSheetModal.show();
           }}
         />
         {/* 只有一个按钮 */}
@@ -112,6 +127,40 @@ export default class ModalTest extends React.Component {
           onCanclePress={() => {
             console.log("dsafdsafs");
           }}
+        />
+        <ActionSheet
+          ref={o => (this.mSheetModal = o)}
+          buttons={[
+            {
+              text: "确定",
+              onPress: () => console.log("确定")
+            },
+            {
+              text: "取消",
+              onPress: () => console.log("取消")
+            }
+          ]}
+        />
+         <ActionSheet
+          ref={o => (this.moreSheetModal = o)}
+          buttons={[
+            {
+              text: "关闭",
+              onPress: () => console.log("关闭")
+            },
+            {
+              text: "投诉",
+              onPress: () => console.log("投诉")
+            },
+            {
+              text: "确定",
+              onPress: () => console.log("确定")
+            },
+            {
+              text: "取消",
+              onPress: () => console.log("取消")
+            }
+          ]}
         />
       </ScrollView>
     );
