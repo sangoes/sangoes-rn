@@ -1,6 +1,6 @@
 {
   "name": "sangoes-rn",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "react-native corss platfrom rn ui ",
   "main": "src/index.js",
   "scripts": {
@@ -47,11 +47,11 @@
   },
   "dependencies": {
     "color": "^3.0.0",
-    "crypto-js": "^3.1.9-1",
-    "lodash": "^4.17.10",
-    "moment": "^2.22.2",
     "prop-types": "^15.6.2",
-    "react-native-vector-icons": "^5.0.0"
+    "react-native-keyboard-aware-scroll-view": "^0.7.2",
+    "react-native-vector-icons": "^5.0.0",
+    "rmc-picker": "^5.0.5",
+    "sangoes-rn-tools": "^0.0.3"
   },
   "rnpm": {
     "assets": [
