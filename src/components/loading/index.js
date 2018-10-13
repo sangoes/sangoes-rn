@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-23 14:29:29 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-27 11:45:05
+ * @Last Modified time: 2018-09-27 11:45:28
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -14,39 +14,19 @@ import { Animated } from "react-native";
 import ActivityIndicator from "../activityIndicator";
 
 /**
- * Toast
- * type:'center' 'top' 'bottom'
+ * Loading
+ *
  */
 
-export default class Toast extends Component {
+export default class Loading extends Component {
   constructor(props) {
     super(props);
     this.state = {
       modalVisible: false,
       fadeAnim: new Animated.Value(0),
       title: null,
-      loading: false,
       type: "center"
     };
-  }
-  // show
-  showToast(type, text, duration) {
-    this.setState({
-      modalVisible: true,
-      title: text,
-      type: type
-    });
-    //duration
-    const toastDuration = duration || 1500;
-    this.closeTimeout = setTimeout(
-      this.closeToast.bind(this, "timeout"),
-      toastDuration
-    );
-    // Fade the toast in now.
-    Animated.timing(this.state.fadeAnim, {
-      toValue: 1,
-      duration: 200
-    }).start();
   }
   // close Modal
   closeModal(reason) {
@@ -54,7 +34,6 @@ export default class Toast extends Component {
       modalVisible: false,
       fadeAnim: new Animated.Value(0),
       title: null,
-      loading: false,
       type: "center"
     });
     const { onClose } = this.props;
@@ -74,7 +53,6 @@ export default class Toast extends Component {
   showLoading(text) {
     this.setState({
       modalVisible: true,
-      loading: true,
       title: text
     });
     // Fade the toast in now.
@@ -96,7 +74,6 @@ export default class Toast extends Component {
       modalVisible: false,
       fadeAnim: new Animated.Value(0),
       title: null,
-      loading: false,
       type: "center"
     });
     const { onClose } = this.props;
@@ -105,7 +82,7 @@ export default class Toast extends Component {
     }
   }
   render() {
-    const { type, loading, title } = this.state;
+    const { type, title } = this.state;
     return (
       <Modal
         animationType="none"
@@ -115,16 +92,12 @@ export default class Toast extends Component {
       >
         <Animated.View style={[styles.container, styles[`${type}Container`]]}>
           <View style={styles.toastView}>
-            {loading ? (
-              <View>
-                <ActivityIndicator size="large" color="white" />
-                {title && (
-                  <Text style={styles.toastText}>{this.state.title}</Text>
-                )}
-              </View>
-            ) : (
-              <Text style={styles.toastText}>{this.state.title}</Text>
-            )}
+            <View>
+              <ActivityIndicator size="large" color="white" />
+              {title && (
+                <Text style={styles.toastText}>{this.state.title}</Text>
+              )}
+            </View>
           </View>
         </Animated.View>
       </Modal>
@@ -134,6 +107,5 @@ export default class Toast extends Component {
 
 Toast.propTypes = {
   onClose: PropTypes.func,
-  loading: PropTypes.bool
 };
 Toast.defaultProps = {};
