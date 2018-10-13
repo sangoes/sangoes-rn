@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-23 15:50:17 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-08-23 19:16:10
+ * @Last Modified time: 2018-10-13 11:01:45
  */
 import React from "react";
 import { View, Button, ScrollView, Text, Toast } from "../../src";
@@ -11,60 +11,32 @@ export default class ToastTest extends React.Component {
   render() {
     return (
       <ScrollView>
-        <Text>TOAST DEFALUT</Text>
+        <Text>DEFAULT TOAST </Text>
         <Button
-          title="TOAST DEFALUT"
+          title="DEFAULT TOAST"
           onPress={() => {
-            this.Toast.showToast("center", "TOAST DEFALUT!");
+            Toast.show("TOAST DEFALUT!", Toast.CENTER, Toast.SHORT);
           }}
         />
-        <Text>TOAST DEFALUT DURTION</Text>
+        <Text>TOP TOAST </Text>
         <Button
-          title="TOAST DEFALUT DURTION"
+          title="TOP TOAST"
           onPress={() => {
-            this.Toast.showToast("center", "TOAST DEFALUT DURTION!", 3000);
+            Toast.show("TOP TOAST!", Toast.TOP, Toast.SHORT);
           }}
         />
-        <Text>TOP TOAST DEFALUT</Text>
+        <Text>BOTTOM TOAST </Text>
         <Button
-          title="TOP TOAST DEFALUT"
+          title="BOTTOM TOAST"
           onPress={() => {
-            this.Toast.showToast("top", "TOAST DEFALUT!");
+            Toast.show("BOTTOM TOAST!", Toast.BOTTOM, Toast.SHORT);
           }}
         />
-        <Text>BOTTOM TOAST DEFALUT</Text>
+        <Text>LONG TOAST </Text>
         <Button
-          title="BOTTOM TOAST DEFALUT"
+          title="LONG TOAST"
           onPress={() => {
-            this.Toast.showToast("bottom", "TOAST DEFALUT!");
-          }}
-        />
-        <Text>LOADING TOAST</Text>
-        <Button
-          title="LOADING TOASTT"
-          onPress={() => {
-            this.Toast.showLoading();
-            this.timer = setTimeout(() => {
-              this.Toast.hideToastLoading();
-            }, 1500);
-          }}
-        />
-        <Text>LOADING TOAST NAME</Text>
-        <Button
-          title="LOADING TOASTT NAME"
-          onPress={() => {
-            this.Toast.showLoading("Loading...");
-            this.timer = setTimeout(() => {
-              this.Toast.hideToastLoading();
-            }, 1500);
-          }}
-        />
-        {/* toast */}
-        <Toast
-          ref={o => (this.Toast = o)}
-          onClose={() => {
-            console.log("close toast");
-            this.timer && clearTimeout(this.timer);
+            Toast.show("LONG TOAST!", Toast.CENTER, Toast.LONG);
           }}
         />
       </ScrollView>

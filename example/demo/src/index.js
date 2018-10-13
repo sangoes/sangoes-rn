@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-19 18:55:46 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-19 21:27:28
+ * @Last Modified time: 2018-09-27 13:23:16
  */
 import { Alert, Slider } from "react-native";
 import Icon from "./components/icon";
@@ -22,7 +22,7 @@ import SectionList from "./components/sectionList/index";
 import Divider from "./components/divider/index";
 import ActivityIndicator from "./components/activityIndicator/index";
 import Button from "./components/button/index";
-import Toast from "./components/toast/index";
+import Toast from "./components/toast";
 import Badge from "./components/badge/index";
 import TextInput from "./components/textInput/index";
 import InputItem from "./components/inputItem/index";
@@ -34,6 +34,7 @@ import TextButton from "./components/textButton/index";
 import Popup from "./components/popup/index";
 import OverLay from "./components/overLay/index";
 import ActionSheet from './components/actionSheet/index';
+import Loading from './components/loading/index';
 
 export {
   Icon,
@@ -66,5 +67,6 @@ export {
   TextButton,
   Popup,
   OverLay,
-  ActionSheet
+  ActionSheet,
+  Loading
 };
