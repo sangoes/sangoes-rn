@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-23 14:29:29 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-10-13 10:55:53
+ * @Last Modified time: 2018-10-13 12:05:54
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -11,6 +11,7 @@ import { Modal } from "react-native";
 import View from "../view";
 import Text from "../text";
 import { Animated } from "react-native";
+import ActivityIndicator from "../activityIndicator/index";
 
 /**
  * Toast
@@ -26,6 +27,23 @@ export default class ToastContainer extends Component {
     };
   }
 
+  componentDidMount() {
+    const { duration, type } = this.props;
+    !(type === "loading") &&
+      (this.closeTimeout = setTimeout(
+        this.closeToast.bind(this, "timeout"),
+        duration
+      ));
+    // Fade the toast in now.
+    Animated.timing(this.state.fadeAnim, {
+      toValue: 1,
+      duration: 200
+    }).start(() => {});
+  }
+
+  componentWillUnmount() {
+    this.closeTimeout && clearTimeout(this.closeTimeout);
+  }
   // close Modal
   closeModal(reason) {
     this.setState({
@@ -36,55 +54,33 @@ export default class ToastContainer extends Component {
     if (onClose && typeof onClose === "function") {
       onClose(reason);
     }
+    // onAnimationEnd
     this.props.onAnimationEnd && this.props.onAnimationEnd();
   }
   // close Toast
   closeToast(reason) {
-    clearTimeout(this.closeTimeout);
+    this.closeTimeout && clearTimeout(this.closeTimeout);
     Animated.timing(this.state.fadeAnim, {
       toValue: 0,
       duration: 200
     }).start(this.closeModal.bind(this, reason));
   }
-  // close loading
-  _closeLoading() {
-    this.setState({
-      modalVisible: false,
-      fadeAnim: new Animated.Value(0)
-    });
-    const { onClose } = this.props;
-    if (onClose && typeof onClose === "function") {
-      onClose();
-    }
-  }
 
-  componentDidMount() {
-    const { duration } = this.props;
-    this.closeTimeout = setTimeout(
-      this.closeToast.bind(this, "timeout"),
-      duration
-    );
-    // Fade the toast in now.
-    Animated.timing(this.state.fadeAnim, {
-      toValue: 1,
-      duration: 200
-    }).start(() => {
-      
-    });
-  }
-  componentWillUnmount() {}
   render() {
     const { type, title } = this.props;
     return (
       <Modal
-        animationType="none"
+        animationType="fade"
         transparent={true}
         visible={this.state.modalVisible}
         onRequestClose={() => {}}
       >
         <Animated.View style={[styles.container, styles[`${type}Container`]]}>
           <View style={styles.toastView}>
-            <Text style={styles.toastText}>{title}</Text>
+            {type === "loading" && (
+              <ActivityIndicator size="large" color="white" />
+            )}
+            {title && <Text style={styles.toastText}>{title}</Text>}
           </View>
         </Animated.View>
       </Modal>
@@ -94,7 +90,7 @@ export default class ToastContainer extends Component {
 
 ToastContainer.propTypes = {
   onClose: PropTypes.func,
-  type: PropTypes.oneOf(["center", "top", "bottom"]),
+  type: PropTypes.oneOf(["center", "top", "bottom", "loading"]),
   title: PropTypes.string,
   duration: PropTypes.number,
   onAnimationEnd: PropTypes.func

@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-27 13:20:31 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-10-13 10:58:31
+ * @Last Modified time: 2018-10-13 12:03:52
  */
 import React from "react";
 import topView from "rn-topview";
@@ -29,7 +29,11 @@ export default {
   CENTER: "center",
   TOP: "top",
   BOTTOM: "bottom",
+  LOADING: "loading",
   show(content, position, duration) {
-    return notice(position, content, duration);
+    return notice(content, position, duration);
+  },
+  hide() {
+    topView.remove();
   }
 };

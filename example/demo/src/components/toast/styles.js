@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-23 16:49:52 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-08-23 18:28:43
+ * @Last Modified time: 2018-10-13 11:49:59
  */
 import { StyleSheet } from "react-native";
 import variables from "../themes";
@@ -34,7 +34,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     alignSelf: "center",
     bottom: variables.toast_margin_top
-  }
+  },
+  loadingContainer: {
+    justifyContent: "center"
+  },
 });
 
 export default styles;

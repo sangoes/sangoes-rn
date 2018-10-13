@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-08-19 18:55:46 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-27 13:23:16
+ * @Last Modified time: 2018-10-13 11:48:03
  */
 import { Alert, Slider } from "react-native";
 import Icon from "./components/icon";
@@ -33,8 +33,7 @@ import Modal from "./components/modal/index";
 import TextButton from "./components/textButton/index";
 import Popup from "./components/popup/index";
 import OverLay from "./components/overLay/index";
-import ActionSheet from './components/actionSheet/index';
-import Loading from './components/loading/index';
+import ActionSheet from "./components/actionSheet/index";
 
 export {
   Icon,
@@ -67,6 +66,5 @@ export {
   TextButton,
   Popup,
   OverLay,
-  ActionSheet,
-  Loading
+  ActionSheet
 };
