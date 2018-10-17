@@ -2,7 +2,7 @@
  * @Author: 驷爺.J.C 
  * @Date: 2018-09-14 21:55:12 
  * @Last Modified by: 驷爺.J.C
- * @Last Modified time: 2018-09-17 11:01:35
+ * @Last Modified time: 2018-10-13 14:23:39
  */
 import React from "react";
 import {
@@ -14,7 +14,8 @@ import {
   Alert,
   Picker
 } from "../../src";
-// import { Picker } from "react-native";
+import {Share} from "react-native"
+
 export default class PickerTest extends React.Component {
   constructor(props) {
     super(props);
@@ -38,11 +39,16 @@ export default class PickerTest extends React.Component {
           title="picker基本"
           onPress={() => {
             this.BasePicker.show();
+            // Share.share({message:"xxx",title:"qqqq"},{}).then(()=>{
+
+            // })
           }}
         />
         <Blank />
         {/* 基本Picker */}
         <Picker ref={o => (this.BasePicker = o)} />
+
+        
       </ScrollView>
     );
   }
